@@ -1,10 +1,14 @@
 package com.example.bookworm.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.bookworm.R;
 import com.example.bookworm.data.Catalogue;
@@ -16,6 +20,8 @@ public class BookDetailActivity extends AppCompatActivity {
     private Book book;
     private int qty = 1;
     private TextView tvQty, tvTotal, tvPriceEach;
+    private FrameLayout overlaySuccess;
+    private LinearLayout dialogSuccess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,7 @@ public class BookDetailActivity extends AppCompatActivity {
         bindBook();
         setupQtyControls();
         setupButtons();
+        setupSuccessOverlay();
     }
 
     private void bindBook() {
@@ -68,9 +75,34 @@ public class BookDetailActivity extends AppCompatActivity {
         btnBack.setOnClickListener(v -> finish());
 
         Button btnBuy = findViewById(R.id.btn_buy);
-        btnBuy.setOnClickListener(v ->
-            Toast.makeText(this, "Order confirmed! Thank you for reading with us.", Toast.LENGTH_LONG).show()
-        );
+        btnBuy.setOnClickListener(v -> showSuccessDialog());
+    }
+
+    private void setupSuccessOverlay() {
+        overlaySuccess = findViewById(R.id.overlay_success);
+        dialogSuccess  = findViewById(R.id.dialog_success);
+
+        TextView tvBody = findViewById(R.id.tv_success_body);
+        tvBody.setText(book.getTitle() + " is on its way. We'll deliver it to your address shortly. Thank you for reading with us!");
+
+        Button btnBackToBooks = findViewById(R.id.btn_back_to_books);
+        btnBackToBooks.setOnClickListener(v -> {
+            overlaySuccess.setVisibility(View.GONE);
+            Intent intent = new Intent(this, BooksActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
+            finish();
+        });
+
+        // Dismiss on backdrop tap
+        overlaySuccess.setOnClickListener(v -> overlaySuccess.setVisibility(View.GONE));
+        dialogSuccess.setOnClickListener(v -> { /* consume — don't dismiss */ });
+    }
+
+    private void showSuccessDialog() {
+        overlaySuccess.setVisibility(View.VISIBLE);
+        dialogSuccess.startAnimation(
+                AnimationUtils.loadAnimation(this, R.anim.pop_in));
     }
 
     private void updateTotal() {

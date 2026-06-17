@@ -70,8 +70,11 @@
                     android:layout_width="46dp"
                     android:layout_height="46dp"
                     android:layout_gravity="end"
+                    android:background="@drawable/bg_avatar"
                     android:src="@drawable/ic_account_circle"
+                    android:padding="8dp"
                     android:scaleType="fitCenter"
+                    android:elevation="4dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:contentDescription="@null" />

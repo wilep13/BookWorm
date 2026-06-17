@@ -18,6 +18,9 @@ public class CarouselAdapter extends RecyclerView.Adapter<CarouselAdapter.Carous
         void onSlideClick();
     }
 
+    // Large multiplier enables seamless infinite scrolling without visible boundaries
+    public static final int LOOP_FACTOR = 10_000;
+
     private final List<Store> stores;
     private OnSlideClickListener listener;
 
@@ -27,6 +30,10 @@ public class CarouselAdapter extends RecyclerView.Adapter<CarouselAdapter.Carous
 
     public void setOnSlideClickListener(OnSlideClickListener l) {
         this.listener = l;
+    }
+
+    public int getActualCount() {
+        return stores.size();
     }
 
     @NonNull
@@ -39,7 +46,7 @@ public class CarouselAdapter extends RecyclerView.Adapter<CarouselAdapter.Carous
 
     @Override
     public void onBindViewHolder(@NonNull CarouselViewHolder h, int position) {
-        Store store = stores.get(position);
+        Store store = stores.get(position % stores.size());
 
         Glide.with(h.ivSlide.getContext())
                 .load(store.getImageResId())
@@ -54,7 +61,9 @@ public class CarouselAdapter extends RecyclerView.Adapter<CarouselAdapter.Carous
     }
 
     @Override
-    public int getItemCount() { return stores.size(); }
+    public int getItemCount() {
+        return stores.isEmpty() ? 0 : stores.size() * LOOP_FACTOR;
+    }
 
     static class CarouselViewHolder extends RecyclerView.ViewHolder {
         final ImageView ivSlide;

@@ -87,4 +87,8 @@
     <string name="book_author_republic">Plato</string>
     <string name="title_books">BOOK</string>
     <string name="greeting_user">User!</string>
+
+    <!-- Order success dialog -->
+    <string name="title_order_confirmed">Order Confirmed</string>
+    <string name="btn_back_to_books">BACK TO BOOKS</string>
 </resources>

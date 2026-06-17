@@ -24,15 +24,18 @@ public class RegisterActivity extends AppCompatActivity {
             Intent intent = new Intent(this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivity(intent);
+            overridePendingTransition(0, 0);
         });
 
         btnRegister.setOnClickListener(v -> {
             startActivity(new Intent(this, HomeActivity.class));
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             finish();
         });
 
         btnGoogle.setOnClickListener(v -> {
             startActivity(new Intent(this, HomeActivity.class));
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             finish();
         });
     }
