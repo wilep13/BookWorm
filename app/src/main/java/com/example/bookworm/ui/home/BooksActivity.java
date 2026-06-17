@@ -161,7 +161,7 @@ public class BooksActivity extends AppCompatActivity {
                 LinearLayout.LayoutParams.MATCH_PARENT, dp(1));
         p.setMargins(dp(13), dp(4), dp(13), dp(4));
         sep.setLayoutParams(p);
-        sep.setBackgroundColor(0x14553522);
+        sep.setBackgroundColor(getColor(R.color.color_separator));
         parent.addView(sep);
     }
 

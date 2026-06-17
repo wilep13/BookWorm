@@ -29,7 +29,7 @@
     <string name="hint_full_name">ex : Jessie Lawrence</string>
     <string name="hint_email">ex : jessie.la@gmail.com</string>
     <string name="hint_confirm_password">ex : j3ss1311</string>
-    <string name="btn_create_account">CREATE ACCOUNT</string>
+    <string name="btn_create_account">REGISTER</string>
     <string name="footer_tap_register">Tap CREATE ACCOUNT to enter the library</string>
 
     <!-- Home -->

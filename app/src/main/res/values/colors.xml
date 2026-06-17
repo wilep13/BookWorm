@@ -19,4 +19,8 @@
     <color name="color_border">#29553522</color>     <!-- rgba(85,53,34,.16) -->
     <color name="color_dot_inactive">#47553522</color> <!-- rgba(124,57,0,.28) approx -->
     <color name="color_success">#6F8E5A</color>        <!-- success green -->
+    <!-- Semi-transparent design tokens -->
+    <color name="color_overlay_dark">#80281810</color> <!-- success overlay dim -->
+    <color name="color_separator">#14553522</color>    <!-- popup menu separator -->
+    <color name="color_meta_strip_bg">#80FFFFFF</color> <!-- book detail meta strip -->
 </resources>

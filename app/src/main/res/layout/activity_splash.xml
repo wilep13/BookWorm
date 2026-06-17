@@ -27,7 +27,7 @@
         android:fontFamily="@font/playfair_display"
         android:gravity="center"
         android:text="@string/tagline"
-        android:textColor="@color/color_primary_3"
+        android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

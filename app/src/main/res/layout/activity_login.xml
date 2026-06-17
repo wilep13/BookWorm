@@ -10,12 +10,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- ── Hero block (cream background) ── -->
+        <!-- ── Hero block (peach background) ── -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/color_secondary_2"
+            android:background="@color/color_secondary_1"
             android:paddingStart="33dp"
             android:paddingEnd="33dp"
             android:paddingTop="56dp"
@@ -99,17 +99,17 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/subtitle_welcome_back"
-                android:textColor="@color/black"
+                android:textColor="@color/color_primary_3"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- ── Folder tab row (cream background) ── -->
+        <!-- ── Folder tab row (peach background) ── -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/color_secondary_2">
+            android:background="@color/color_secondary_1">
 
             <!-- LOGIN tab — ACTIVE -->
             <FrameLayout
@@ -135,7 +135,7 @@
                     android:paddingBottom="20dp"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/tab_login"
-                    android:textColor="@color/color_primary_3"
+                    android:textColor="@color/color_primary_2"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:letterSpacing="0.05" />
@@ -152,7 +152,7 @@
                 android:paddingBottom="20dp"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/tab_register"
-                android:textColor="@color/color_primary_1"
+                android:textColor="@color/color_primary_2"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:clickable="true"
@@ -165,7 +165,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/color_secondary_1"
+            android:background="@color/color_secondary_2"
             android:paddingStart="33dp"
             android:paddingEnd="33dp"
             android:paddingTop="26dp"
@@ -177,7 +177,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/label_username"
-                android:textColor="@color/color_primary_3"
+                android:textColor="@color/color_primary_2"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -196,7 +196,7 @@
                 android:inputType="textPersonName"
                 android:paddingStart="18dp"
                 android:paddingEnd="18dp"
-                android:textColor="@color/color_primary_3"
+                android:textColor="@color/color_primary_2"
                 android:textColorHint="@color/color_hint"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -207,7 +207,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/label_password"
-                android:textColor="@color/color_primary_3"
+                android:textColor="@color/color_primary_2"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -226,7 +226,7 @@
                 android:inputType="textPassword"
                 android:paddingStart="18dp"
                 android:paddingEnd="18dp"
-                android:textColor="@color/color_primary_3"
+                android:textColor="@color/color_primary_2"
                 android:textColorHint="@color/color_hint"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -300,7 +300,7 @@
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/btn_sign_in_google"
-                    android:textColor="@color/color_primary_3"
+                    android:textColor="@color/color_primary_2"
                     android:textSize="13.5sp"
                     android:textStyle="bold" />
             </LinearLayout>
