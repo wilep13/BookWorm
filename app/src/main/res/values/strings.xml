@@ -1,3 +1,90 @@
 <resources>
     <string name="app_name">BookWorm</string>
+
+    <!-- Splash -->
+    <string name="tagline">Read, save, and have the world\'s\nmost influential collection of classic\nliterature at your fingertips.</string>
+    <string name="btn_get_started">GET STARTED</string>
+
+    <!-- Auth shared -->
+    <string name="label_hello">Hello !</string>
+    <string name="tab_login">LOGIN</string>
+    <string name="tab_register">REGISTER</string>
+    <string name="text_or">or</string>
+    <string name="btn_sign_in_google">Sign in with Google</string>
+
+    <!-- Login -->
+    <string name="subtitle_welcome_back">Welcome back, reader</string>
+    <string name="label_username">Username</string>
+    <string name="label_password">Password</string>
+    <string name="hint_username">ex : jessiela</string>
+    <string name="hint_password">ex : j3ss1311</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="footer_tap_login">Tap LOGIN to enter the library</string>
+
+    <!-- Register -->
+    <string name="subtitle_join_library">Join the library</string>
+    <string name="label_full_name">Full Name</string>
+    <string name="label_email">Email</string>
+    <string name="label_confirm_password">Confirm password</string>
+    <string name="hint_full_name">ex : Jessie Lawrence</string>
+    <string name="hint_email">ex : jessie.la@gmail.com</string>
+    <string name="hint_confirm_password">ex : j3ss1311</string>
+    <string name="btn_create_account">CREATE ACCOUNT</string>
+    <string name="footer_tap_register">Tap CREATE ACCOUNT to enter the library</string>
+
+    <!-- Home -->
+    <string name="caption_welcome_back">Welcome back</string>
+    <string name="greeting_hello">Hello, User!</string>
+    <string name="subtitle_nice_day">Have a nice day</string>
+    <string name="section_featured_books">Featured Books</string>
+    <string name="btn_see_all">See all →</string>
+
+    <!-- Books -->
+    <string name="kicker_books">The Collection</string>
+    <string name="title_our_library">Our Library</string>
+    <string name="subtitle_timeless">Timeless reads, carefully chosen</string>
+    <string name="tab_non_fiction">Non-Fiction</string>
+    <string name="tab_fiction">Fiction</string>
+
+    <!-- Stores -->
+    <string name="kicker_stores">Find Us</string>
+    <string name="title_our_stores">Our Stores</string>
+    <string name="subtitle_stores">Visit us across Indonesia</string>
+
+    <!-- Book Detail -->
+    <string name="label_book_detail">Book Detail</string>
+    <string name="label_about_book">About this book</string>
+    <string name="label_place_order">Place your order</string>
+    <string name="label_quantity">Quantity</string>
+    <string name="label_each">each</string>
+    <string name="label_delivery_address">Delivery Address</string>
+    <string name="hint_delivery_address">Enter delivery address</string>
+    <string name="label_phone_number">Phone Number</string>
+    <string name="hint_phone_number">Enter phone number</string>
+    <string name="label_total">Total</string>
+    <string name="btn_buy_now">BUY NOW</string>
+    <string name="label_published">Published</string>
+    <string name="label_pages">Pages</string>
+    <string name="label_genre">Genre</string>
+    <string name="content_description_back">Back</string>
+
+    <!-- Navbar -->
+    <string name="nav_home">Home</string>
+    <string name="nav_books">Books</string>
+    <string name="nav_stores">Stores</string>
+    <string name="nav_logout">Log Out</string>
+    <string name="nav_cart">Cart</string>
+    <string name="nav_explore">Explore</string>
+
+    <!-- Book data -->
+    <string name="book_title_pride_prejudice">Pride and Prejudice</string>
+    <string name="book_author_pride_prejudice">Jane Austen</string>
+    <string name="book_title_meditations">Meditations</string>
+    <string name="book_author_meditations">Marcus Aurelius</string>
+    <string name="book_title_great_gatsby">The Great Gatsby</string>
+    <string name="book_author_great_gatsby">F. Scott Fitzgerald</string>
+    <string name="book_title_republic">The Republic</string>
+    <string name="book_author_republic">Plato</string>
+    <string name="title_books">BOOK</string>
+    <string name="greeting_user">User!</string>
 </resources>

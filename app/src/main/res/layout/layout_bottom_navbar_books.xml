@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/navbar_total_height">
+
+    <!-- Brown bar background -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/navbar_height"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_navbar_bar" />
+
+    <!-- Subtract cutout centered under Books circle (x=152dp) -->
+    <ImageView
+        android:layout_width="79dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="21dp"
+        android:src="@drawable/ic_navbar_subtract"
+        android:scaleType="fitXY"
+        android:contentDescription="@null" />
+
+    <!-- Active circle for Books tab -->
+    <ImageView
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="133dp"
+        android:src="@drawable/ic_navbar_circle"
+        android:contentDescription="@null" />
+
+    <!-- Books icon (active — on circle, elevated) -->
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_nav_books"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/nav_books" />
+
+    <!-- Home icon (inactive, on bar) -->
+    <ImageView
+        android:layout_width="33dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="27dp"
+        android:src="@drawable/ic_nav_home_inactive"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/nav_home" />
+
+    <!-- Cart icon (inactive, on bar) -->
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="27dp"
+        android:src="@drawable/ic_nav_cart"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/nav_cart" />
+
+    <!-- Explore icon (inactive, on bar) -->
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="321dp"
+        android:layout_marginTop="27dp"
+        android:src="@drawable/ic_nav_explore"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/nav_explore" />
+
+    <!-- Transparent click areas -->
+    <View
+        android:id="@+id/nav_home"
+        android:layout_width="98dp"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground" />
+
+    <View
+        android:id="@+id/nav_books"
+        android:layout_width="98dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="98dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground" />
+
+    <View
+        android:id="@+id/nav_cart"
+        android:layout_width="98dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="196dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <View
+        android:id="@+id/nav_explore"
+        android:layout_width="98dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="294dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground" />
+</FrameLayout>

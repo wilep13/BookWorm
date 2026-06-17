@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_secondary_1"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ── Hero block (cream background) ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/color_secondary_2"
+            android:paddingStart="33dp"
+            android:paddingEnd="33dp"
+            android:paddingTop="56dp"
+            android:paddingBottom="10dp">
+
+            <!-- Book decorations (absolute via FrameLayout overlay) -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Logo -->
+                <ImageView
+                    android:layout_width="@dimen/logo_width"
+                    android:layout_height="@dimen/logo_height"
+                    android:src="@drawable/ic_bookworm_logo_auth"
+                    android:scaleType="fitXY"
+                    android:contentDescription="@string/app_name" />
+
+                <!-- Book decorations top-right -->
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="4dp"
+                    android:alpha="0.50"
+                    android:rotation="-12"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_book_decoration"
+                    android:contentDescription="@null" />
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="38dp"
+                    android:layout_marginEnd="48dp"
+                    android:alpha="0.40"
+                    android:rotation="14"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_book_decoration"
+                    android:contentDescription="@null" />
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginEnd="0dp"
+                    android:alpha="0.45"
+                    android:rotation="-6"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_book_decoration"
+                    android:contentDescription="@null" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginEnd="80dp"
+                    android:alpha="0.32"
+                    android:rotation="20"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_book_decoration"
+                    android:contentDescription="@null" />
+            </FrameLayout>
+
+            <!-- "Hello !" heading -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/label_hello"
+                android:textColor="@color/color_primary_3"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/subtitle_welcome_back"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ── Folder tab row (cream background) ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/color_secondary_2">
+
+            <!-- LOGIN tab — ACTIVE -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tab_folder">
+
+                <!-- Underline at top -->
+                <View
+                    android:layout_width="28dp"
+                    android:layout_height="3dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/color_primary_2" />
+
+                <TextView
+                    android:id="@+id/tab_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="19dp"
+                    android:paddingBottom="20dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/tab_login"
+                    android:textColor="@color/color_primary_3"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05" />
+            </FrameLayout>
+
+            <!-- REGISTER tab — INACTIVE -->
+            <TextView
+                android:id="@+id/tab_register"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="19dp"
+                android:paddingBottom="20dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/tab_register"
+                android:textColor="@color/color_primary_1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:letterSpacing="0.05" />
+        </LinearLayout>
+
+        <!-- ── Form area (peach background) ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/color_secondary_1"
+            android:paddingStart="33dp"
+            android:paddingEnd="33dp"
+            android:paddingTop="26dp"
+            android:paddingBottom="60dp">
+
+            <!-- Username label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/label_username"
+                android:textColor="@color/color_primary_3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Username field -->
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_input_field"
+                android:elevation="4dp"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/hint_username"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:textColor="@color/color_primary_3"
+                android:textColorHint="@color/color_hint"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- Password label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/label_password"
+                android:textColor="@color/color_primary_3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Password field -->
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_input_field"
+                android:elevation="4dp"
+                android:fontFamily="@font/montserrat"
+                android:hint="@string/hint_password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:textColor="@color/color_primary_3"
+                android:textColorHint="@color/color_hint"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- LOGIN button -->
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_primary_height"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_primary"
+                android:elevation="4dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/btn_login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05" />
+
+            <!-- "or" divider -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="22dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/color_divider" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/text_or"
+                    android:textColor="@color/color_grey"
+                    android:textSize="11sp"
+                    android:fontWeight="600" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/color_divider" />
+            </LinearLayout>
+
+            <!-- Google sign-in button -->
+            <LinearLayout
+                android:id="@+id/btn_google"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_google_btn"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_google"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@null" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/btn_sign_in_google"
+                    android:textColor="@color/color_primary_3"
+                    android:textSize="13.5sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Footer hint -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="@string/footer_tap_login"
+                android:textColor="@color/color_grey"
+                android:textSize="11sp"
+                android:fontWeight="600" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

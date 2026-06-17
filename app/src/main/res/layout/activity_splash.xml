@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_secondary_2">
+
+    <!-- Bookworm mascot logo: centered horizontally, 117dp from top -->
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="159dp"
+        android:layout_height="378dp"
+        android:layout_marginTop="117dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_bookworm_logo"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Tagline text: 253dp wide, centered, at ~424dp from top -->
+    <TextView
+        android:id="@+id/tv_tagline"
+        android:layout_width="253dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="424dp"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:text="@string/tagline"
+        android:textColor="@color/color_primary_3"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- GET STARTED button: 104dp wide, centered, at ~500dp from top -->
+    <Button
+        android:id="@+id/btn_get_started"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/bg_button_splash"
+        android:fontFamily="@font/montserrat"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="@string/btn_get_started"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

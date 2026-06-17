@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nav pill with scoop under Home slot (cx=66) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="312dp" android:height="64dp"
+    android:viewportWidth="312" android:viewportHeight="64">
+    <!-- Caramel pill with scoop -->
+    <path
+        android:fillColor="#C08552"
+        android:pathData="M20 12 H39.44 C47.51 15.70 39.78 42.60 65.67 42.60 C91.56 42.60 82.82 12 92.57 12 H292 A20 20 0 0 1 312 32 V44 A20 20 0 0 1 292 64 H20 A20 20 0 0 1 0 44 V32 A20 20 0 0 1 20 12 Z" />
+    <!-- Burnt active bubble circle (cx=66, cy=21.76, r=16.48) -->
+    <path
+        android:fillColor="#7C3900"
+        android:pathData="M82.48 21.76 A16.48 16.48 0 1 1 49.52 21.76 A16.48 16.48 0 0 1 82.48 21.76 Z" />
+</vector>

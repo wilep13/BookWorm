@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nav pill with scoop under Books slot (cx=126) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="312dp" android:height="64dp"
+    android:viewportWidth="312" android:viewportHeight="64">
+    <path
+        android:fillColor="#C08552"
+        android:pathData="M20 12 H99.44 C107.51 15.70 99.78 42.60 125.67 42.60 C151.56 42.60 142.82 12 152.57 12 H292 A20 20 0 0 1 312 32 V44 A20 20 0 0 1 292 64 H20 A20 20 0 0 1 0 44 V32 A20 20 0 0 1 20 12 Z" />
+    <path
+        android:fillColor="#7C3900"
+        android:pathData="M142.48 21.76 A16.48 16.48 0 1 1 109.52 21.76 A16.48 16.48 0 0 1 142.48 21.76 Z" />
+</vector>

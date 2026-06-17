@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_screen">24dp</dimen>
+    <dimen name="margin_auth_form">33dp</dimen>
+    <dimen name="spacing_xs">7dp</dimen>
+    <dimen name="spacing_lg">42dp</dimen>
+    <dimen name="input_height">46dp</dimen>
+    <dimen name="input_corner_radius">7dp</dimen>
+    <dimen name="button_primary_height">48dp</dimen>
+    <dimen name="button_primary_corner">7dp</dimen>
+    <dimen name="button_splash_corner">12dp</dimen>
+    <dimen name="card_book_width">146dp</dimen>
+    <dimen name="card_book_height">240dp</dimen>
+    <dimen name="carousel_height">150dp</dimen>
+    <dimen name="navbar_height">64dp</dimen>
+    <dimen name="navbar_total_height">88dp</dimen>
+    <dimen name="navbar_width">312dp</dimen>
+    <dimen name="avatar_size">46dp</dimen>
+    <dimen name="logo_width">93dp</dimen>
+    <dimen name="logo_height">87dp</dimen>
+    <dimen name="store_card_image_width">96dp</dimen>
+    <dimen name="store_card_image_height">112dp</dimen>
+    <dimen name="cover_detail_width">162dp</dimen>
+</resources>

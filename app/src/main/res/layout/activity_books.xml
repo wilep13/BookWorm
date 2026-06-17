@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_books_screen">
+
+    <!-- ── Scrollable body ── -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="130dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ── Header ── -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="64dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/kicker_books"
+                        android:textColor="@color/color_primary_1"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/title_our_library"
+                        android:textColor="@color/color_primary_3"
+                        android:textSize="27sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/subtitle_timeless"
+                        android:textColor="@color/color_primary_3"
+                        android:textSize="14sp"
+                        android:alpha="0.80"
+                        android:fontWeight="600" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_account_circle"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@null" />
+            </FrameLayout>
+
+            <!-- ── Segmented tabs ── -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/bg_segmented_tab"
+                android:padding="5dp">
+
+                <!-- Sliding active pill (BELOW the tab text in z-order) -->
+                <View
+                    android:id="@+id/tab_indicator"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_segmented_active" />
+
+                <!-- Tabs row (ON TOP so clicks register) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tab_non_fiction"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/tab_non_fiction"
+                        android:textColor="@color/white"
+                        android:textSize="13.5sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.03"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/tab_fiction"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/tab_fiction"
+                        android:textColor="@color/color_primary_3"
+                        android:textSize="13.5sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.03"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- ── Book grid (2 columns) ── -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_books"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ── Floating pill navbar (Books active) ── -->
+    <FrameLayout
+        android:layout_width="@dimen/navbar_width"
+        android:layout_height="@dimen/navbar_height"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:elevation="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_nav_pill_books"
+            android:scaleType="fitXY"
+            android:contentDescription="@null" />
+
+        <!-- Burnt bubble at cx=126 -->
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/bg_nav_bubble"
+            android:scaleType="fitXY"
+            android:contentDescription="@null" />
+
+        <!-- Books icon (active — cream) -->
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="116dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_nav_books_v2"
+            android:tint="@color/color_secondary_2"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/nav_books" />
+
+        <!-- Home icon (inactive) at cx=66 -->
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="27dp"
+            android:src="@drawable/ic_nav_home_v2"
+            android:tint="@color/color_primary_3"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/nav_home" />
+
+        <!-- Stores icon (inactive) at cx=186 -->
+        <ImageView
+            android:id="@+id/nav_stores"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="175dp"
+            android:layout_marginTop="27dp"
+            android:src="@drawable/ic_nav_store"
+            android:tint="@color/color_primary_3"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/nav_stores" />
+
+        <!-- Logout icon (inactive) at cx=246 -->
+        <ImageView
+            android:id="@+id/nav_logout"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="235dp"
+            android:layout_marginTop="27dp"
+            android:src="@drawable/ic_nav_logout"
+            android:tint="@color/color_primary_3"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/nav_logout" />
+    </FrameLayout>
+</FrameLayout>

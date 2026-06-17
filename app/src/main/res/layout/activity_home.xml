@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_secondary_1">
+
+    <!-- ── Scrollable body ── -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="130dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ── Header row: kicker + title + subtitle + avatar ── -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="64dp">
+
+                <!-- Left: kicker + title + subtitle -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/caption_welcome_back"
+                        android:textColor="@color/color_primary_1"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.12" />
+
+                    <TextView
+                        android:id="@+id/tv_greeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/greeting_hello"
+                        android:textColor="@color/color_primary_3"
+                        android:textSize="27sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/subtitle_nice_day"
+                        android:textColor="@color/color_primary_3"
+                        android:textSize="14sp"
+                        android:alpha="0.80"
+                        android:fontWeight="600" />
+                </LinearLayout>
+
+                <!-- Right: Avatar / account button -->
+                <ImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_account_circle"
+                    android:scaleType="fitCenter"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@null" />
+            </FrameLayout>
+
+            <!-- ── Carousel section ── -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="22dp">
+
+                <!-- ViewPager2 with rounded corners via outline clip -->
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vp_carousel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/carousel_height"
+                    android:outlineProvider="background" />
+            </FrameLayout>
+
+            <!-- ── Dots + prev/next row ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- Prev button (30dp circle, white, coffee icon) -->
+                <ImageView
+                    android:id="@+id/btn_carousel_prev"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_chevron_left"
+                    android:tint="@color/color_primary_2"
+                    android:background="@drawable/bg_carousel_btn"
+                    android:scaleType="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@null" />
+
+                <!-- Dots (updated programmatically) -->
+                <LinearLayout
+                    android:id="@+id/ll_dots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" />
+
+                <!-- Next button -->
+                <ImageView
+                    android:id="@+id/btn_carousel_next"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:tint="@color/color_primary_2"
+                    android:background="@drawable/bg_carousel_btn"
+                    android:scaleType="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@null" />
+            </LinearLayout>
+
+            <!-- ── Section header: Featured Books + See All ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/section_featured_books"
+                    android:textColor="@color/color_primary_3"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_see_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/btn_see_all"
+                    android:textColor="@color/color_primary_1"
+                    android:textSize="12sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- ── Featured book grid (2 columns) ── -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_books"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="16dp"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ── Floating pill navbar (Home active) ── -->
+    <FrameLayout
+        android:layout_width="@dimen/navbar_width"
+        android:layout_height="@dimen/navbar_height"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:elevation="8dp">
+
+        <!-- Pill background SVG (scoop under Home slot) -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_nav_pill_home"
+            android:scaleType="fitXY"
+            android:contentDescription="@null" />
+
+        <!-- Burnt bubble at cx=66, cyB=21.76, r=16.48 -->
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/bg_nav_bubble"
+            android:scaleType="fitXY"
+            android:contentDescription="@null" />
+
+        <!-- Home icon (active — cream white) centered in bubble -->
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_nav_home_v2"
+            android:tint="@color/color_secondary_2"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/nav_home" />
+
+        <!-- Books icon (inactive) at cx=126, bar_cy=38 -->
+        <ImageView
+            android:id="@+id/nav_books"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="27dp"
+            android:src="@drawable/ic_nav_books_v2"
+            android:tint="@color/color_primary_3"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/nav_books" />
+
+        <!-- Stores icon (inactive) at cx=186 -->
+        <ImageView
+            android:id="@+id/nav_stores"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="175dp"
+            android:layout_marginTop="27dp"
+            android:src="@drawable/ic_nav_store"
+            android:tint="@color/color_primary_3"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/nav_stores" />
+
+        <!-- Logout icon (inactive) at cx=246 -->
+        <ImageView
+            android:id="@+id/nav_logout"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="235dp"
+            android:layout_marginTop="27dp"
+            android:src="@drawable/ic_nav_logout"
+            android:tint="@color/color_primary_3"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/nav_logout" />
+    </FrameLayout>
+</FrameLayout>

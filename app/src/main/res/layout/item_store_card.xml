@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_store_card"
+    android:elevation="3dp"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <!-- Store image (96×112dp) -->
+    <FrameLayout
+        android:layout_width="96dp"
+        android:layout_height="112dp"
+        android:background="@drawable/bg_store_image"
+        android:clipChildren="true">
+
+        <ImageView
+            android:id="@+id/iv_store"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null" />
+
+        <!-- City badge (top-left) -->
+        <LinearLayout
+            android:id="@+id/badge_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_margin="6dp"
+            android:background="@drawable/bg_city_badge"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:src="@drawable/ic_nav_pin"
+                android:tint="@color/white"
+                android:scaleType="fitCenter"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white"
+                android:textSize="8.5sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:letterSpacing="0.05" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Store info (right side) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="14dp"
+        android:orientation="vertical">
+
+        <!-- Store name -->
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/playfair_display"
+            android:textColor="@color/color_primary_3"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:lineSpacingMultiplier="1.2"
+            android:maxLines="2" />
+
+        <!-- Address row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_nav_pin"
+                android:tint="@color/color_primary_1"
+                android:scaleType="fitCenter"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/color_primary_3"
+                android:textSize="12sp"
+                android:fontWeight="600"
+                android:maxLines="2" />
+        </LinearLayout>
+
+        <!-- Contact row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_phone"
+                android:tint="@color/color_primary_1"
+                android:scaleType="fitCenter"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:id="@+id/tv_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/color_primary_3"
+                android:textSize="12sp"
+                android:fontWeight="600" />
+        </LinearLayout>
+
+        <!-- Hours row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_clock"
+                android:tint="@color/color_primary_1"
+                android:scaleType="fitCenter"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:id="@+id/tv_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/color_primary_3"
+                android:textSize="12sp"
+                android:fontWeight="600" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
