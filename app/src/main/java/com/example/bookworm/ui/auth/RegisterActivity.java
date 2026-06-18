@@ -21,10 +21,9 @@ public class RegisterActivity extends AppCompatActivity {
         LinearLayout btnGoogle = findViewById(R.id.btn_google);
 
         tabLogin.setOnClickListener(v -> {
-            Intent intent = new Intent(this, LoginActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-            startActivity(intent);
+            startActivity(new Intent(this, LoginActivity.class));
             overridePendingTransition(0, 0);
+            finish();
         });
 
         btnRegister.setOnClickListener(v -> {

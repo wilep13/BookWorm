@@ -5,6 +5,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/bg_popup_menu"
+    android:paddingStart="9dp"
+    android:paddingEnd="8dp"
     android:paddingTop="7dp"
-    android:paddingBottom="7dp"
-    android:minWidth="170dp" />
+    android:paddingBottom="5dp"
+    />

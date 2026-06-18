@@ -6,14 +6,17 @@
     android:background="@drawable/bg_store_card"
     android:elevation="3dp"
     android:orientation="horizontal"
-    android:padding="12dp">
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp"
+    android:paddingTop="13dp"
+    android:paddingBottom="12dp">
 
-    <!-- Store image (96×112dp) -->
+    <!-- Store image (129×126dp, clipped to 14dp rounded corners) -->
     <FrameLayout
-        android:layout_width="96dp"
-        android:layout_height="112dp"
+        android:layout_width="129dp"
+        android:layout_height="126dp"
         android:background="@drawable/bg_store_image"
-        android:clipChildren="true">
+        android:clipToOutline="true">
 
         <ImageView
             android:id="@+id/iv_store"
@@ -22,43 +25,6 @@
             android:scaleType="centerCrop"
             android:contentDescription="@null"
             tools:src="@drawable/store_4" />
-
-        <!-- City badge (top-left) -->
-        <LinearLayout
-            android:id="@+id/badge_city"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|start"
-            android:layout_margin="6dp"
-            android:background="@drawable/bg_city_badge"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp">
-
-            <ImageView
-                android:layout_width="9dp"
-                android:layout_height="9dp"
-                android:src="@drawable/ic_nav_pin"
-                android:tint="@color/white"
-                android:scaleType="fitCenter"
-                android:contentDescription="@null" />
-
-            <TextView
-                android:id="@+id/tv_city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:fontFamily="@font/montserrat"
-                android:textColor="@color/white"
-                android:textSize="8.5sp"
-                android:textStyle="bold"
-                android:textAllCaps="true"
-                android:letterSpacing="0.05"
-                tools:text="JAKARTA" />
-        </LinearLayout>
     </FrameLayout>
 
     <!-- Store info (right side) -->
@@ -66,7 +32,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="13dp"
+        android:layout_gravity="center_vertical"
         android:orientation="vertical">
 
         <!-- Store name -->
@@ -80,19 +47,19 @@
             android:textStyle="bold"
             android:lineSpacingMultiplier="1.2"
             android:maxLines="2"
-            tools:text="Gramedia Matraman" />
+            tools:text="Ivory Tower Books" />
 
         <!-- Address row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="4dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_nav_pin"
                 android:tint="@color/color_primary_1"
                 android:scaleType="fitCenter"
@@ -102,26 +69,26 @@
                 android:id="@+id/tv_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="6dp"
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/color_primary_3"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:fontWeight="600"
                 android:maxLines="2"
-                tools:text="Jl. Matraman Raya No.46, Jakarta" />
+                tools:text="Jl. Braga No. 18, Bandung" />
         </LinearLayout>
 
         <!-- Contact row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="4dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:src="@drawable/ic_phone"
                 android:tint="@color/color_primary_1"
                 android:scaleType="fitCenter"
@@ -131,25 +98,25 @@
                 android:id="@+id/tv_contact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="6dp"
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/color_primary_3"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:fontWeight="600"
-                tools:text="(021) 8191 5292" />
+                tools:text="+62 812 3344 5566" />
         </LinearLayout>
 
         <!-- Hours row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="4dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:src="@drawable/ic_clock"
                 android:tint="@color/color_primary_1"
                 android:scaleType="fitCenter"
@@ -159,12 +126,12 @@
                 android:id="@+id/tv_hours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="6dp"
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/color_primary_3"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:fontWeight="600"
-                tools:text="09:00 - 21:00" />
+                tools:text="09:00 – 21:00" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

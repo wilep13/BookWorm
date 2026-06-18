@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
@@ -53,8 +52,6 @@ public class CarouselAdapter extends RecyclerView.Adapter<CarouselAdapter.Carous
                 .centerCrop()
                 .into(h.ivSlide);
 
-        h.tvCity.setText(store.getCity());
-
         h.itemView.setOnClickListener(v -> {
             if (listener != null) listener.onSlideClick();
         });
@@ -67,12 +64,10 @@ public class CarouselAdapter extends RecyclerView.Adapter<CarouselAdapter.Carous
 
     static class CarouselViewHolder extends RecyclerView.ViewHolder {
         final ImageView ivSlide;
-        final TextView  tvCity;
 
         CarouselViewHolder(@NonNull View itemView) {
             super(itemView);
             ivSlide = itemView.findViewById(R.id.iv_slide);
-            tvCity  = itemView.findViewById(R.id.tv_city);
         }
     }
 }

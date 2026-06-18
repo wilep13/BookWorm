@@ -2,8 +2,6 @@ package com.example.bookworm.ui.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
@@ -71,18 +69,13 @@ public class SplashActivity extends AppCompatActivity {
                                 .setStartDelay(80)
                                 .setInterpolator(new DecelerateInterpolator())
                                 .start();
-                        // Stage 4 (1130–1430ms): button fades in, then auto-navigate
+                        // Stage 4 (1130–1430ms): button fades in
                         btnGetStarted.animate()
                                 .alpha(1f)
                                 .translationY(0f)
                                 .setDuration(300)
                                 .setStartDelay(280)
                                 .setInterpolator(new DecelerateInterpolator())
-                                .withEndAction(() ->
-                                        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                                            if (!isFinishing()) goToLogin();
-                                        }, 1200)
-                                )
                                 .start();
                     })
                     .start();

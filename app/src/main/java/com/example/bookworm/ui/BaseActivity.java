@@ -54,12 +54,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         int popW = content.getMeasuredWidth();
 
         PopupWindow popup = new PopupWindow(content,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
+                popW,
                 ViewGroup.LayoutParams.WRAP_CONTENT, true);
         popup.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        popup.setElevation(dp(18));
+        popup.setElevation(dp(6));
         popup.setOutsideTouchable(true);
-        popup.showAsDropDown(anchor, anchor.getWidth() - popW, dp(8));
+        popup.showAsDropDown(anchor, anchor.getWidth() - popW, 0);
 
         content.setPivotX(popW);
         content.setPivotY(0f);
@@ -79,11 +79,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         TextView  text = item.findViewById(R.id.tv_menu_label);
         icon.setImageResource(iconRes);
         text.setText(label);
-        if (isLogout) {
-            int red = getColor(R.color.color_error);
-            text.setTextColor(red);
-            icon.setColorFilter(new PorterDuffColorFilter(red, PorterDuff.Mode.SRC_IN));
-        }
+        int color = isLogout ? getColor(R.color.color_error) : getColor(R.color.color_primary_3);
+        text.setTextColor(color);
+        icon.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
         item.setOnClickListener(v -> action.run());
         parent.addView(item);
     }
@@ -92,7 +90,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         View sep = new View(this);
         LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, dp(1));
-        p.setMargins(dp(13), dp(4), dp(13), dp(4));
+        p.setMargins(dp(6), dp(4), dp(6), dp(4));
         sep.setLayoutParams(p);
         sep.setBackgroundColor(getColor(R.color.color_separator));
         parent.addView(sep);

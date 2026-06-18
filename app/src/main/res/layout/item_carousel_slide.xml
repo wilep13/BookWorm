@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_carousel_slide"
+    android:clipToOutline="true"
     android:clickable="true"
     android:focusable="true">
 
-    <!-- Store image (background fill) -->
     <ImageView
         android:id="@+id/iv_slide"
         android:layout_width="match_parent"
@@ -15,47 +16,9 @@
         android:contentDescription="@null"
         tools:src="@drawable/cover_art_gatsby" />
 
-    <!-- Gradient overlay: transparent at top → dark at bottom -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_carousel_overlay" />
 
-    <!-- City badge (bottom-left) -->
-    <LinearLayout
-        android:id="@+id/badge_city"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"
-        android:layout_marginStart="14dp"
-        android:layout_marginBottom="13dp"
-        android:background="@drawable/bg_city_badge"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingStart="11dp"
-        android:paddingEnd="11dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
-
-        <ImageView
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:src="@drawable/ic_nav_pin"
-            android:tint="@color/white"
-            android:scaleType="fitCenter"
-            android:contentDescription="@null" />
-
-        <TextView
-            android:id="@+id/tv_city"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:fontFamily="@font/montserrat"
-            android:textColor="@color/white"
-            android:textSize="10.5sp"
-            android:textStyle="bold"
-            android:letterSpacing="0.05"
-            android:textAllCaps="true"
-            tools:text="JAKARTA" />
-    </LinearLayout>
 </FrameLayout>

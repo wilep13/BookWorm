@@ -37,7 +37,6 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreViewHol
                 .centerCrop()
                 .into(h.ivStore);
 
-        h.tvCity   .setText(store.getCity());
         h.tvName   .setText(store.getName());
         h.tvAddress.setText(store.getAddress());
         h.tvContact.setText(store.getContact());
@@ -49,12 +48,11 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreViewHol
 
     static class StoreViewHolder extends RecyclerView.ViewHolder {
         final ImageView ivStore;
-        final TextView tvCity, tvName, tvAddress, tvContact, tvHours;
+        final TextView tvName, tvAddress, tvContact, tvHours;
 
         StoreViewHolder(@NonNull View itemView) {
             super(itemView);
             ivStore    = itemView.findViewById(R.id.iv_store);
-            tvCity     = itemView.findViewById(R.id.tv_city);
             tvName     = itemView.findViewById(R.id.tv_name);
             tvAddress  = itemView.findViewById(R.id.tv_address);
             tvContact  = itemView.findViewById(R.id.tv_contact);

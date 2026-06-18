@@ -84,30 +84,13 @@
             </FrameLayout>
 
             <!-- ── Carousel ── -->
-            <FrameLayout
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_carousel"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/carousel_height"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginTop="22dp">
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/vp_carousel"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/carousel_height"
-                    android:outlineProvider="background"
-                    tools:background="@color/color_primary_2" />
-
-                <!-- Design-time carousel slide placeholder -->
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/carousel_height"
-                    android:scaleType="centerCrop"
-                    android:visibility="gone"
-                    android:contentDescription="@null"
-                    tools:visibility="visible"
-                    tools:src="@drawable/cover_art_gatsby" />
-            </FrameLayout>
+                android:layout_marginTop="22dp" />
 
             <!-- ── Dots + prev/next ── -->
             <LinearLayout

@@ -7,7 +7,7 @@
     <dimen name="button_primary_height">48dp</dimen>
     <dimen name="button_primary_corner">7dp</dimen>
     <dimen name="button_splash_corner">12dp</dimen>
-    <dimen name="carousel_height">140dp</dimen>
+    <dimen name="carousel_height">150dp</dimen>
     <dimen name="avatar_size">51dp</dimen>
     <dimen name="logo_width">93dp</dimen>
     <dimen name="logo_height">87dp</dimen>
