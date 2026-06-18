@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     android:background="@color/color_secondary_2">
 
+    <!-- Peach oval shadow: fades in first, absorbed as logo lands -->
+    <View
+        android:id="@+id/view_shadow"
+        android:layout_width="130dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="360dp"
+        android:background="@drawable/bg_splash_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- Bookworm mascot logo: centered horizontally, 117dp from top -->
     <ImageView
         android:id="@+id/iv_logo"
@@ -37,18 +48,9 @@
     <!-- GET STARTED button: 104dp wide, centered, at ~500dp from top -->
     <Button
         android:id="@+id/btn_get_started"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        style="@style/Widget.BookWorm.Button.Splash"
         android:layout_marginTop="500dp"
-        android:background="@drawable/bg_button_splash"
-        android:fontFamily="@font/montserrat"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
         android:text="@string/btn_get_started"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="9sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -1,7 +1,13 @@
 package com.example.bookworm.ui.home;
 
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.text.Layout;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.LeadingMarginSpan;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -47,7 +53,26 @@ public class BookDetailActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.tv_year))   .setText(book.getYear());
         ((TextView) findViewById(R.id.tv_pages))  .setText(String.valueOf(book.getPages()));
         ((TextView) findViewById(R.id.tv_genre))  .setText(book.getCategory());
-        ((TextView) findViewById(R.id.tv_blurb))  .setText(book.getBlurb());
+        String blurb = book.getBlurb();
+        TextView tvDropcap = findViewById(R.id.tv_blurb_dropcap);
+        TextView tvBlurb   = findViewById(R.id.tv_blurb);
+        if (blurb != null && blurb.length() > 1) {
+            tvDropcap.setText(String.valueOf(blurb.charAt(0)));
+            final String rest = blurb.substring(1);
+            // Post so drop cap is measured before we read its width
+            tvDropcap.post(() -> {
+                int gap = Math.round(5 * getResources().getDisplayMetrics().density);
+                int dropCapW = tvDropcap.getWidth() + gap;
+                SpannableString ss = new SpannableString(rest);
+                // Indent first 2 lines; line 3+ flows full-width below the drop cap
+                ss.setSpan(new DropCapMarginSpan(dropCapW, 2),
+                        0, rest.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                tvBlurb.setText(ss);
+            });
+        } else {
+            tvDropcap.setText("");
+            tvBlurb.setText(blurb != null ? blurb : "");
+        }
 
         tvPriceEach = findViewById(R.id.tv_price_each);
         tvTotal     = findViewById(R.id.tv_total);
@@ -108,5 +133,21 @@ public class BookDetailActivity extends AppCompatActivity {
     private void updateTotal() {
         String total = "Rp " + String.format("%,d", book.getPrice() * qty).replace(',', '.');
         tvTotal.setText(total);
+    }
+
+    private static final class DropCapMarginSpan implements LeadingMarginSpan.LeadingMarginSpan2 {
+        private final int margin;
+        private final int lineCount;
+
+        DropCapMarginSpan(int margin, int lineCount) {
+            this.margin = margin;
+            this.lineCount = lineCount;
+        }
+
+        @Override public int getLeadingMargin(boolean first) { return first ? margin : 0; }
+        @Override public int getLeadingMarginLineCount() { return lineCount; }
+        @Override public void drawLeadingMargin(Canvas c, Paint p, int x, int dir,
+                int top, int baseline, int bottom, CharSequence text,
+                int start, int end, boolean first, Layout layout) {}
     }
 }

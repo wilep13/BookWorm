@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:contentDescription="@null"
-            tools:src="@drawable/cover_art_republic" />
+            tools:src="@drawable/store_4" />
 
         <!-- City badge (top-left) -->
         <LinearLayout

@@ -10,8 +10,7 @@
     <com.example.bookworm.view.BookCoverView
         android:id="@+id/book_cover_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:background="@color/color_primary_1" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tv_tag"

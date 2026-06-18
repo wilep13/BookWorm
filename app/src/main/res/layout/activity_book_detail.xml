@@ -15,7 +15,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="64dp">
 
             <!-- ── Top meta strip: Published | Pages | Genre (caramel background, chip overlays) ── -->
             <LinearLayout
@@ -259,24 +260,54 @@
                 android:letterSpacing="0.1"
                 android:gravity="center"
                 android:paddingTop="16dp"
-                android:paddingBottom="16dp" />
+                android:paddingBottom="10dp" />
 
-            <!-- ── Blurb ── -->
-            <TextView
-                android:id="@+id/tv_blurb"
+            <!-- Divider line below "ABOUT THIS BOOK" (matches Figma vector separator) -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                android:alpha="0.35" />
+
+            <!-- ── Blurb with drop cap: FrameLayout overlay + LeadingMarginSpan2 in Java ── -->
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:lineSpacingMultiplier="1.5"
-                android:gravity="start"
                 android:paddingStart="28dp"
                 android:paddingEnd="28dp"
-                android:paddingTop="22dp"
+                android:paddingTop="14dp"
                 android:paddingBottom="4dp"
-                tools:text="In my younger and more vulnerable years my father gave me some advice that I have been turning over in my mind ever since." />
+                android:clipToPadding="false">
+
+                <!-- Full-width blurb; first 2 lines indented via LeadingMarginSpan2 at runtime -->
+                <TextView
+                    android:id="@+id/tv_blurb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|start"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:lineSpacingMultiplier="1.5"
+                    android:gravity="start"
+                    tools:text="n my younger and more vulnerable years my father gave me some advice that I have been turning over in my mind ever since." />
+
+                <!-- Drop cap: negative marginTop compensates for Playfair Display's large ascender
+                     space above the cap letter (~6sp) vs Montserrat's smaller top padding -->
+                <TextView
+                    android:id="@+id/tv_blurb_dropcap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|start"
+                    android:layout_marginTop="-10dp"
+                    android:fontFamily="@font/playfair_display"
+                    android:textColor="@color/white"
+                    android:textSize="52sp"
+                    android:textStyle="bold"
+                    android:includeFontPadding="false"
+                    tools:text="I" />
+            </FrameLayout>
 
             <!-- ── Order card (peach on caramel) ── -->
             <LinearLayout
@@ -465,16 +496,10 @@
                 <!-- BUY NOW button (25dp height per Figma) -->
                 <Button
                     android:id="@+id/btn_buy"
-                    android:layout_width="match_parent"
+                    style="@style/Widget.BookWorm.Button.Primary"
                     android:layout_height="40dp"
-                    android:background="@drawable/bg_button_primary"
-                    android:fontFamily="@font/montserrat"
-                    android:letterSpacing="0.05"
-                    android:text="@string/btn_buy_now"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:text="@string/btn_buy_now" />
             </LinearLayout>
 
             </LinearLayout>
@@ -545,16 +570,8 @@
 
             <Button
                 android:id="@+id/btn_back_to_books"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/button_primary_height"
-                android:background="@drawable/bg_button_primary"
-                android:text="@string/btn_back_to_books"
-                android:textColor="@color/white"
-                android:fontFamily="@font/montserrat"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textAllCaps="false"
-                android:letterSpacing="0.05" />
+                style="@style/Widget.BookWorm.Button.Primary"
+                android:text="@string/btn_back_to_books" />
         </LinearLayout>
     </FrameLayout>
 </FrameLayout>

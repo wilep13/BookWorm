@@ -67,8 +67,8 @@
 
                 <ImageView
                     android:id="@+id/iv_avatar"
-                    android:layout_width="46dp"
-                    android:layout_height="46dp"
+                    android:layout_width="@dimen/avatar_size"
+                    android:layout_height="@dimen/avatar_size"
                     android:layout_gravity="end"
                     android:background="@drawable/bg_avatar"
                     android:src="@drawable/ic_account_circle"

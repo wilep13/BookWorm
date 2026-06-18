@@ -39,6 +39,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.viewpager2:viewpager2:1.1.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")

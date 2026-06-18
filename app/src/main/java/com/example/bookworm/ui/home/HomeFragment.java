@@ -113,7 +113,7 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
         rv.setAdapter(adapter);
-        rv.addItemDecoration(new BaseActivity.BookGridDecoration(dp(68), dp(42)));
+        rv.addItemDecoration(new BaseActivity.BookGridDecoration(dp(16), dp(30)));
     }
 
     private void setupAvatar(View root) {

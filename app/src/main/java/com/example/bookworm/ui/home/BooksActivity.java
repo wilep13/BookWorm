@@ -51,6 +51,21 @@ public class BooksActivity extends BaseActivity {
 
         tabNonFiction.setOnClickListener(v -> applyTab("Non-Fiction", true));
         tabFiction   .setOnClickListener(v -> applyTab("Fiction", true));
+
+        // Initialize indicator width after first layout pass (getWidth() returns 0 in onCreate)
+        tabNonFiction.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int l, int t, int r, int b,
+                                       int ol, int ot, int or, int ob) {
+                int w = r - l;
+                if (w > 0) {
+                    v.removeOnLayoutChangeListener(this);
+                    tabIndicator.getLayoutParams().width = w;
+                    tabIndicator.requestLayout();
+                    tabIndicator.setTranslationX(activeTab.equals("Non-Fiction") ? 0f : w);
+                }
+            }
+        });
     }
 
     private void applyTab(String tab, boolean animate) {
@@ -63,8 +78,6 @@ public class BooksActivity extends BaseActivity {
         tabNonFiction.post(() -> {
             int halfW = tabNonFiction.getWidth();
             if (halfW == 0) return;
-            tabIndicator.getLayoutParams().width = halfW;
-            tabIndicator.requestLayout();
 
             float targetX = tab.equals("Non-Fiction") ? 0f : halfW;
             if (animate) {

@@ -3,7 +3,7 @@
     android:width="18dp" android:height="18dp" android:viewportWidth="18" android:viewportHeight="18">
     <path
         android:pathData="M9 5L4 9.5 9 14"
-        android:strokeColor="#553522"
+        android:strokeColor="@color/color_primary_3"
         android:strokeWidth="2"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"

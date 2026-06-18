@@ -294,18 +294,9 @@
             <!-- REGISTER button -->
             <Button
                 android:id="@+id/btn_register"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/button_primary_height"
+                style="@style/Widget.BookWorm.Button.Primary"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/bg_button_primary"
-                android:elevation="4dp"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/btn_create_account"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:letterSpacing="0.05" />
+                android:text="@string/btn_create_account" />
 
             <!-- "or" divider -->
             <LinearLayout

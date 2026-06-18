@@ -5,10 +5,10 @@
     android:viewportWidth="393" android:viewportHeight="92">
     <!-- Caramel bar with bezier scoop at Stores slot -->
     <path
-        android:fillColor="#C08552"
+        android:fillColor="@color/color_primary_1"
         android:pathData="M0 20 A10 10 0 0 1 10 10 H206.5 C218.5 15.5 207 55.5 245.5 55.5 C284 55.5 271 10 285.5 10 H383 A10 10 0 0 1 393 20 V82 A10 10 0 0 1 383 92 H10 A10 10 0 0 1 0 82 Z" />
     <!-- Active bubble (cx=246, cy=24.5, r=24.5) -->
     <path
-        android:fillColor="#7C3900"
+        android:fillColor="@color/color_burnt"
         android:pathData="M270.5 24.5 A24.5 24.5 0 1 1 221.5 24.5 A24.5 24.5 0 0 1 270.5 24.5 Z" />
 </vector>

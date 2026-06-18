@@ -36,6 +36,10 @@ public class BookCoverView extends View {
     private static Bitmap sBodyNonficBitmap;
     private static final Map<Integer, Bitmap> sCoverCache = new HashMap<>();
 
+    // Edit-mode only — decoded once, shared across all preview instances
+    private static Bitmap sEditBodyBitmap;
+    private static Bitmap sEditCoverBitmap;
+
     private Bitmap bodyBitmap;
     private Bitmap coverBitmap;
     private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
@@ -76,7 +80,32 @@ public class BookCoverView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         if (isInEditMode()) {
-            canvas.drawColor(0xFFC08552);
+            int w = getWidth(), h = getHeight();
+            if (w == 0 || h == 0) { canvas.drawColor(0xFFC08552); return; }
+            // Body: use BitmapFactory (sampled down for speed)
+            if (sEditBodyBitmap == null) {
+                BitmapFactory.Options opts = new BitmapFactory.Options();
+                opts.inSampleSize = 4;
+                sEditBodyBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.book_body_fic, opts);
+            }
+            if (sEditBodyBitmap != null) {
+                int bW = sEditBodyBitmap.getWidth(), bH = sEditBodyBitmap.getHeight();
+                Rect src = new Rect(
+                        Math.round(bW * SRC_L), Math.round(bH * SRC_T),
+                        Math.round(bW * SRC_R), Math.round(bH * SRC_B));
+                canvas.drawBitmap(sEditBodyBitmap, src, new RectF(0, 0, w, h), paint);
+            } else {
+                canvas.drawColor(0xFFC08552);
+            }
+            // Cover art: use Drawable API — more reliable in Android Studio layout preview
+            android.graphics.drawable.Drawable coverD =
+                    getContext().getDrawable(R.drawable.cover_art_gatsby);
+            if (coverD != null) {
+                coverD.setBounds(
+                        Math.round(w * FACE_L), Math.round(h * FACE_T),
+                        Math.round(w * (1f - FACE_R)), Math.round(h * (1f - FACE_B)));
+                coverD.draw(canvas);
+            }
             return;
         }
         if (bodyBitmap == null) return;

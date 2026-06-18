@@ -28,6 +28,7 @@ public class BooksFragment extends Fragment {
     private NestedScrollView nsvBooks;
     private BookAdapter bookAdapter;
     private final List<Book> currentList = new ArrayList<>();
+    private String activeTab = "Non-Fiction";
     private View tabIndicator;
     private TextView tabNonFiction, tabFiction;
 
@@ -59,9 +60,27 @@ public class BooksFragment extends Fragment {
 
         tabNonFiction.setOnClickListener(v -> applyTab("Non-Fiction", true));
         tabFiction   .setOnClickListener(v -> applyTab("Fiction", true));
+
+        // On the first show, the fragment is still GONE during onViewCreated so
+        // getWidth() returns 0 inside post(). This one-shot listener fires after
+        // the real layout pass to correctly initialize the indicator.
+        tabNonFiction.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int l, int t, int r, int b,
+                                       int ol, int ot, int or, int ob) {
+                int w = r - l;
+                if (w > 0) {
+                    v.removeOnLayoutChangeListener(this);
+                    tabIndicator.getLayoutParams().width = w;
+                    tabIndicator.requestLayout();
+                    tabIndicator.setTranslationX(activeTab.equals("Non-Fiction") ? 0f : w);
+                }
+            }
+        });
     }
 
     private void applyTab(String tab, boolean animate) {
+        activeTab = tab;
         tabNonFiction.setTextColor(requireContext().getColor(
                 tab.equals("Non-Fiction") ? android.R.color.white : R.color.color_primary_3));
         tabFiction.setTextColor(requireContext().getColor(
@@ -105,7 +124,12 @@ public class BooksFragment extends Fragment {
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if (!hidden && nsvBooks != null) nsvBooks.scrollTo(0, 0);
+        if (!hidden) {
+            if (nsvBooks != null) nsvBooks.scrollTo(0, 0);
+            // Views were GONE while hidden so getWidth() was 0 during initial applyTab.
+            // Re-apply now that the fragment is visible and views are measurable.
+            if (tabNonFiction != null) applyTab(activeTab, false);
+        }
     }
 
     @Override
