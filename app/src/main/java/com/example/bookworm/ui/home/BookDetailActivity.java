@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.bookworm.R;
 import com.example.bookworm.data.Catalogue;
 import com.example.bookworm.model.Book;
-import com.example.bookworm.view.BookCoverView;
 
 public class BookDetailActivity extends AppCompatActivity {
 
@@ -39,8 +38,8 @@ public class BookDetailActivity extends AppCompatActivity {
     }
 
     private void bindBook() {
-        BookCoverView coverView = findViewById(R.id.book_cover);
-        coverView.setBook(book);
+        ImageView coverView = findViewById(R.id.book_cover);
+        coverView.setImageResource(book.getCoverResId());
 
         ((TextView) findViewById(R.id.tv_tag))   .setText(book.getTag());
         ((TextView) findViewById(R.id.tv_title))  .setText(book.getTitle());

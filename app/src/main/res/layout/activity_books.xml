@@ -8,7 +8,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="130dp"
+        android:paddingBottom="100dp"
         android:clipToPadding="false">
 
         <LinearLayout
@@ -143,12 +143,11 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- ── Floating pill navbar (Books active) ── -->
+    <!-- ── Full-width navbar (Books active) — Figma: 393dp × 92dp, scoop at cx=158 ── -->
     <FrameLayout
-        android:layout_width="@dimen/navbar_width"
-        android:layout_height="@dimen/navbar_height"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_gravity="bottom"
         android:elevation="8dp">
 
         <ImageView
@@ -158,64 +157,54 @@
             android:scaleType="fitXY"
             android:contentDescription="@null" />
 
-        <!-- Burnt bubble at cx=126 -->
-        <ImageView
-            android:layout_width="33dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/bg_nav_bubble"
-            android:scaleType="fitXY"
-            android:contentDescription="@null" />
-
-        <!-- Books icon (active — cream) -->
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="116dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/ic_nav_books_v2"
-            android:tint="@color/color_secondary_2"
-            android:scaleType="fitCenter"
-            android:contentDescription="@string/nav_books" />
-
-        <!-- Home icon (inactive) at cx=66 -->
+        <!-- Home icon (inactive) — center at (69, 45) -->
         <ImageView
             android:id="@+id/nav_home"
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="27dp"
+            android:layout_marginStart="58dp"
+            android:layout_marginTop="34dp"
             android:src="@drawable/ic_nav_home_v2"
-            android:tint="@color/color_primary_3"
+            android:tint="@color/white"
             android:scaleType="fitCenter"
             android:clickable="true"
             android:focusable="true"
             android:contentDescription="@string/nav_home" />
 
-        <!-- Stores icon (inactive) at cx=186 -->
+        <!-- Books icon (active — cream) centered in bubble at (158, 22) -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="146dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_nav_books_v2"
+            android:tint="@color/color_secondary_2"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/nav_books" />
+
+        <!-- Stores icon (inactive) — center at (246, 45) -->
         <ImageView
             android:id="@+id/nav_stores"
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:layout_marginStart="175dp"
-            android:layout_marginTop="27dp"
-            android:src="@drawable/ic_nav_store"
-            android:tint="@color/color_primary_3"
+            android:layout_marginStart="235dp"
+            android:layout_marginTop="34dp"
+            android:src="@drawable/ic_nav_cart"
+            android:tint="@color/white"
             android:scaleType="fitCenter"
             android:clickable="true"
             android:focusable="true"
             android:contentDescription="@string/nav_stores" />
 
-        <!-- Logout icon (inactive) at cx=246 -->
+        <!-- Logout icon (inactive) — center at (342, 45) -->
         <ImageView
             android:id="@+id/nav_logout"
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:layout_marginStart="235dp"
-            android:layout_marginTop="27dp"
+            android:layout_marginStart="331dp"
+            android:layout_marginTop="34dp"
             android:src="@drawable/ic_nav_logout"
-            android:tint="@color/color_primary_3"
+            android:tint="@color/white"
             android:scaleType="fitCenter"
             android:clickable="true"
             android:focusable="true"

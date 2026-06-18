@@ -6,38 +6,11 @@
     android:clickable="true"
     android:focusable="true">
 
-    <!-- Cover stack: page-block + ribbon + clothbound cover -->
-    <FrameLayout
+    <com.example.bookworm.view.BookCoverView
+        android:id="@+id/book_cover_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" />
 
-        <!-- Page block (behind cover, offset 6dp right + 6dp down) -->
-        <View
-            android:id="@+id/page_block"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/bg_page_block" />
-
-        <!-- Ribbon (caramel bookmark strip, ~78% from left) -->
-        <View
-            android:id="@+id/ribbon"
-            android:layout_width="8dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="-2dp"
-            android:layout_gravity="start"
-            android:translationX="0dp"
-            android:background="@color/color_primary_1" />
-
-        <!-- Clothbound cover (custom view) -->
-        <com.example.bookworm.view.BookCoverView
-            android:id="@+id/book_cover_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </FrameLayout>
-
-    <!-- Text below cover -->
     <TextView
         android:id="@+id/tv_tag"
         android:layout_width="match_parent"
@@ -58,7 +31,7 @@
         android:layout_marginTop="4dp"
         android:fontFamily="@font/montserrat"
         android:textColor="@color/color_primary_3"
-        android:textSize="12.5sp"
+        android:textSize="11.5sp"
         android:textStyle="bold"
         android:lineSpacingMultiplier="1.2"
         android:maxLines="2"
@@ -71,7 +44,7 @@
         android:layout_marginTop="3dp"
         android:fontFamily="@font/playfair_display"
         android:textColor="@color/color_primary_1"
-        android:textSize="13.5sp"
+        android:textSize="13sp"
         android:textStyle="bold"
         android:maxLines="1"
         android:ellipsize="end" />

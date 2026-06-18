@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Stat chip: coffee (#8D5B3D) at 65% opacity, 6dp radius — overlaid on caramel strip -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#A68D5B3D" />
+    <corners android:radius="6dp" />
+</shape>

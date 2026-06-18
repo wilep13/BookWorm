@@ -115,7 +115,7 @@ public class BooksActivity extends AppCompatActivity {
         LinearLayout container = content.findViewById(R.id.menu_container);
 
         addMenuItem(container, R.drawable.ic_nav_home_v2, "Home",      false, () -> navigateTo(HomeActivity.class));
-        addMenuItem(container, R.drawable.ic_nav_store,   "Our Store", false, () -> navigateTo(StoresActivity.class));
+        addMenuItem(container, R.drawable.ic_nav_cart,   "Our Store", false, () -> navigateTo(StoresActivity.class));
         addSeparator(container);
         addMenuItem(container, R.drawable.ic_nav_logout,  "Log Out",   true,  this::logout);
 

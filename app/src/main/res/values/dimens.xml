@@ -9,16 +9,16 @@
     <dimen name="button_primary_height">48dp</dimen>
     <dimen name="button_primary_corner">7dp</dimen>
     <dimen name="button_splash_corner">12dp</dimen>
-    <dimen name="card_book_width">146dp</dimen>
+    <dimen name="card_book_width">133dp</dimen>
     <dimen name="card_book_height">240dp</dimen>
-    <dimen name="carousel_height">150dp</dimen>
-    <dimen name="navbar_height">64dp</dimen>
-    <dimen name="navbar_total_height">88dp</dimen>
-    <dimen name="navbar_width">312dp</dimen>
-    <dimen name="avatar_size">46dp</dimen>
+    <dimen name="carousel_height">140dp</dimen>
+    <dimen name="navbar_height">82dp</dimen>
+    <dimen name="navbar_total_height">92dp</dimen>
+    <dimen name="navbar_width">393dp</dimen>
+    <dimen name="avatar_size">51dp</dimen>
     <dimen name="logo_width">93dp</dimen>
     <dimen name="logo_height">87dp</dimen>
     <dimen name="store_card_image_width">96dp</dimen>
     <dimen name="store_card_image_height">112dp</dimen>
-    <dimen name="cover_detail_width">162dp</dimen>
+    <dimen name="cover_detail_width">136dp</dimen>
 </resources>

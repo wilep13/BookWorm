@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Nav pill with scoop under Books slot (cx=126) -->
+<!-- Nav pill: 393dp full-width, 92dp container (bar at y=10), scoop at cx=158 (Books) -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="312dp" android:height="64dp"
-    android:viewportWidth="312" android:viewportHeight="64">
+    android:width="393dp" android:height="92dp"
+    android:viewportWidth="393" android:viewportHeight="92">
+    <!-- Caramel bar with scoop for Books bubble -->
     <path
         android:fillColor="#C08552"
-        android:pathData="M20 12 H99.44 C107.51 15.70 99.78 42.60 125.67 42.60 C151.56 42.60 142.82 12 152.57 12 H292 A20 20 0 0 1 312 32 V44 A20 20 0 0 1 292 64 H20 A20 20 0 0 1 0 44 V32 A20 20 0 0 1 20 12 Z" />
+        android:pathData="M0 15 A5 5 0 0 1 5 10 H136 A26 26 0 0 1 180 10 H388 A5 5 0 0 1 393 15 V87 A5 5 0 0 1 388 92 H5 A5 5 0 0 1 0 87 Z" />
+    <!-- Burnt active bubble (cx=158, cy=24.5, r=24.5) -->
     <path
         android:fillColor="#7C3900"
-        android:pathData="M142.48 21.76 A16.48 16.48 0 1 1 109.52 21.76 A16.48 16.48 0 0 1 142.48 21.76 Z" />
+        android:pathData="M182.5 24.5 A24.5 24.5 0 1 1 133.5 24.5 A24.5 24.5 0 0 1 182.5 24.5 Z" />
 </vector>

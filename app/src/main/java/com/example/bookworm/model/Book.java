@@ -12,9 +12,11 @@ public class Book {
     private final int pages;
     private final int price;
     private final String blurb;
+    private final int coverResId;
 
     public Book(String id, String title, String author, String category, String tag,
-                String clothColor, String accentColor, String year, int pages, int price, String blurb) {
+                String clothColor, String accentColor, String year, int pages, int price,
+                String blurb, int coverResId) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -26,6 +28,7 @@ public class Book {
         this.pages = pages;
         this.price = price;
         this.blurb = blurb;
+        this.coverResId = coverResId;
     }
 
     public String getId()         { return id; }
@@ -39,6 +42,7 @@ public class Book {
     public int    getPages()      { return pages; }
     public int    getPrice()      { return price; }
     public String getBlurb()      { return blurb; }
+    public int    getCoverResId() { return coverResId; }
 
     public String getPriceFormatted() {
         return "Rp " + String.format("%,d", price).replace(',', '.');

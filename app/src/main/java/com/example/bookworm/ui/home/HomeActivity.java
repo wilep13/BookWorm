@@ -114,7 +114,7 @@ public class HomeActivity extends AppCompatActivity {
         BookAdapter adapter = new BookAdapter(featured, false);
         adapter.setOnBookClickListener(book -> openBookDetail(book.getId()));
         rv.setAdapter(adapter);
-        rv.addItemDecoration(new BookGridDecoration(dp(16), dp(32)));
+        rv.addItemDecoration(new BookGridDecoration(dp(68), dp(42)));
     }
 
     private void setupNavbar() {
@@ -137,7 +137,7 @@ public class HomeActivity extends AppCompatActivity {
         LinearLayout container = content.findViewById(R.id.menu_container);
 
         addMenuItem(container, R.drawable.ic_nav_books_v2, "All Books",  false, () -> navigateTo(BooksActivity.class));
-        addMenuItem(container, R.drawable.ic_nav_store,    "Our Store",  false, () -> navigateTo(StoresActivity.class));
+        addMenuItem(container, R.drawable.ic_nav_cart,    "Our Store",  false, () -> navigateTo(StoresActivity.class));
         addSeparator(container);
         addMenuItem(container, R.drawable.ic_nav_logout,   "Log Out",    true,  this::logout);
 
