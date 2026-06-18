@@ -37,7 +37,7 @@
     <!-- GET STARTED button: 104dp wide, centered, at ~500dp from top -->
     <Button
         android:id="@+id/btn_get_started"
-        android:layout_width="104dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
         android:background="@drawable/bg_button_splash"

@@ -75,6 +75,10 @@ public class BookCoverView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        if (isInEditMode()) {
+            canvas.drawColor(0xFFC08552);
+            return;
+        }
         if (bodyBitmap == null) return;
         int w = getWidth();
         int h = getHeight();

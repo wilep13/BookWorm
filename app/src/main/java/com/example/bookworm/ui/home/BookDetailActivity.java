@@ -87,8 +87,9 @@ public class BookDetailActivity extends AppCompatActivity {
         Button btnBackToBooks = findViewById(R.id.btn_back_to_books);
         btnBackToBooks.setOnClickListener(v -> {
             overlaySuccess.setVisibility(View.GONE);
-            Intent intent = new Intent(this, BooksActivity.class);
+            Intent intent = new Intent(this, com.example.bookworm.ui.MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            intent.putExtra("tab", com.example.bookworm.view.NavbarView.SLOT_BOOKS);
             startActivity(intent);
             finish();
         });

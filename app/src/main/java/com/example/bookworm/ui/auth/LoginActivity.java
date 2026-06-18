@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.bookworm.R;
-import com.example.bookworm.ui.home.HomeActivity;
+import com.example.bookworm.ui.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,13 +28,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         btnLogin.setOnClickListener(v -> {
-            startActivity(new Intent(this, HomeActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             finish();
         });
 
         btnGoogle.setOnClickListener(v -> {
-            startActivity(new Intent(this, HomeActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             finish();
         });

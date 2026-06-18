@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Nav pill: 393dp full-width, 92dp container (bar at y=10), scoop at cx=158 (Books) -->
+<!-- Nav pill: 393×92dp. Bar (y=10→92, r=10) with bezier scoop cx=158 (79dp wide, 45.5dp deep). -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="393dp" android:height="92dp"
     android:viewportWidth="393" android:viewportHeight="92">
-    <!-- Caramel bar with scoop for Books bubble -->
+    <!-- Caramel bar with bezier scoop at Books slot -->
     <path
         android:fillColor="#C08552"
-        android:pathData="M0 15 A5 5 0 0 1 5 10 H136 A26 26 0 0 1 180 10 H388 A5 5 0 0 1 393 15 V87 A5 5 0 0 1 388 92 H5 A5 5 0 0 1 0 87 Z" />
-    <!-- Burnt active bubble (cx=158, cy=24.5, r=24.5) -->
+        android:pathData="M0 20 A10 10 0 0 1 10 10 H118.5 C130.5 15.5 119 55.5 157.5 55.5 C196 55.5 183 10 197.5 10 H383 A10 10 0 0 1 393 20 V82 A10 10 0 0 1 383 92 H10 A10 10 0 0 1 0 82 Z" />
+    <!-- Active bubble (cx=158, cy=24.5, r=24.5) -->
     <path
         android:fillColor="#7C3900"
         android:pathData="M182.5 24.5 A24.5 24.5 0 1 1 133.5 24.5 A24.5 24.5 0 0 1 182.5 24.5 Z" />

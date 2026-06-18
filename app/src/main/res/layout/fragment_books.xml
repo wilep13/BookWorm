@@ -4,9 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_books_screen"
-    tools:context=".ui.home.BooksActivity">
+    tools:context=".ui.home.BooksFragment">
 
-    <!-- ── Scrollable body ── -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_books"
         android:layout_width="match_parent"
@@ -89,14 +88,12 @@
                 android:background="@drawable/bg_segmented_tab"
                 android:padding="5dp">
 
-                <!-- Sliding active pill (BELOW the tab text in z-order) -->
                 <View
                     android:id="@+id/tab_indicator"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/bg_segmented_active" />
 
-                <!-- Tabs row (ON TOP so clicks register) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -134,7 +131,7 @@
                 </LinearLayout>
             </FrameLayout>
 
-            <!-- ── Book grid (2 columns) ── -->
+            <!-- ── Book grid ── -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_books"
                 android:layout_width="match_parent"
@@ -148,7 +145,5 @@
                 tools:itemCount="6" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
-    <include layout="@layout/component_navbar_books" />
 
 </FrameLayout>

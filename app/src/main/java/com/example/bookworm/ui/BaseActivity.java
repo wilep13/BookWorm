@@ -26,6 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         Intent intent = new Intent(this, cls);
         intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 
     protected void logout() {
@@ -105,7 +106,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     // ── Shared inner class ───────────────────────────────────────────────────
 
-    protected static class BookGridDecoration extends RecyclerView.ItemDecoration {
+    public static class BookGridDecoration extends RecyclerView.ItemDecoration {
         private final int colGap, rowGap;
 
         public BookGridDecoration(int colGap, int rowGap) {

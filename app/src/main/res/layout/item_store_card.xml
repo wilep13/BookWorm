@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_store_card"
@@ -19,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:contentDescription="@null" />
+            android:contentDescription="@null"
+            tools:src="@drawable/cover_art_republic" />
 
         <!-- City badge (top-left) -->
         <LinearLayout
@@ -54,7 +56,8 @@
                 android:textSize="8.5sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:letterSpacing="0.05" />
+                android:letterSpacing="0.05"
+                tools:text="JAKARTA" />
         </LinearLayout>
     </FrameLayout>
 
@@ -76,7 +79,8 @@
             android:textSize="17sp"
             android:textStyle="bold"
             android:lineSpacingMultiplier="1.2"
-            android:maxLines="2" />
+            android:maxLines="2"
+            tools:text="Gramedia Matraman" />
 
         <!-- Address row -->
         <LinearLayout
@@ -103,7 +107,8 @@
                 android:textColor="@color/color_primary_3"
                 android:textSize="12sp"
                 android:fontWeight="600"
-                android:maxLines="2" />
+                android:maxLines="2"
+                tools:text="Jl. Matraman Raya No.46, Jakarta" />
         </LinearLayout>
 
         <!-- Contact row -->
@@ -130,7 +135,8 @@
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/color_primary_3"
                 android:textSize="12sp"
-                android:fontWeight="600" />
+                android:fontWeight="600"
+                tools:text="(021) 8191 5292" />
         </LinearLayout>
 
         <!-- Hours row -->
@@ -157,7 +163,8 @@
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/color_primary_3"
                 android:textSize="12sp"
-                android:fontWeight="600" />
+                android:fontWeight="600"
+                tools:text="09:00 - 21:00" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
