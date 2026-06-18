@@ -56,7 +56,6 @@
     <string name="label_about_book">About this book</string>
     <string name="label_place_order">Place your order</string>
     <string name="label_quantity">Quantity</string>
-    <string name="label_each">each</string>
     <string name="label_delivery_address">Delivery Address</string>
     <string name="hint_delivery_address">Enter delivery address</string>
     <string name="label_phone_number">Phone Number</string>
@@ -73,20 +72,6 @@
     <string name="nav_books">Books</string>
     <string name="nav_stores">Stores</string>
     <string name="nav_logout">Log Out</string>
-    <string name="nav_cart">Cart</string>
-    <string name="nav_explore">Explore</string>
-
-    <!-- Book data -->
-    <string name="book_title_pride_prejudice">Pride and Prejudice</string>
-    <string name="book_author_pride_prejudice">Jane Austen</string>
-    <string name="book_title_meditations">Meditations</string>
-    <string name="book_author_meditations">Marcus Aurelius</string>
-    <string name="book_title_great_gatsby">The Great Gatsby</string>
-    <string name="book_author_great_gatsby">F. Scott Fitzgerald</string>
-    <string name="book_title_republic">The Republic</string>
-    <string name="book_author_republic">Plato</string>
-    <string name="title_books">BOOK</string>
-    <string name="greeting_user">User!</string>
 
     <!-- Order success dialog -->
     <string name="title_order_confirmed">Order Confirmed</string>

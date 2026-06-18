@@ -1,22 +1,13 @@
 package com.example.bookworm.ui.home;
 
-import android.content.Intent;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
@@ -25,13 +16,14 @@ import com.example.bookworm.adapter.BookAdapter;
 import com.example.bookworm.adapter.CarouselAdapter;
 import com.example.bookworm.data.Catalogue;
 import com.example.bookworm.model.Book;
-import com.example.bookworm.ui.auth.LoginActivity;
+import com.example.bookworm.ui.BaseActivity;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
     private static final long AUTO_SLIDE_DELAY_MS = 3_000L;
 
+    private NestedScrollView nsvHome;
     private ViewPager2 vpCarousel;
     private LinearLayout llDots;
     private int actualCount;
@@ -51,6 +43,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        nsvHome = findViewById(R.id.nsv_home);
         setupCarousel();
         setupBookGrid();
         setupNavbar();
@@ -64,7 +57,6 @@ public class HomeActivity extends AppCompatActivity {
         CarouselAdapter adapter = new CarouselAdapter(Catalogue.STORES);
         adapter.setOnSlideClickListener(() -> navigateTo(StoresActivity.class));
 
-        // Register callback BEFORE setAdapter so the initial onPageSelected is captured
         vpCarousel.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
@@ -74,11 +66,8 @@ public class HomeActivity extends AppCompatActivity {
 
         vpCarousel.setAdapter(adapter);
 
-        // Start at midpoint so the user can swipe freely in both directions
         int initialPage = actualCount * (CarouselAdapter.LOOP_FACTOR / 2);
         vpCarousel.setCurrentItem(initialPage, false);
-
-        // Ensure first dot is active regardless of callback timing
         buildDots(0);
 
         ImageView btnPrev = findViewById(R.id.btn_carousel_prev);
@@ -132,79 +121,24 @@ public class HomeActivity extends AppCompatActivity {
         if (tvSeeAll != null) tvSeeAll.setOnClickListener(v -> navigateTo(BooksActivity.class));
     }
 
-    private void showAvatarMenu(View anchor) {
-        View content = getLayoutInflater().inflate(R.layout.popup_avatar_menu, null);
-        LinearLayout container = content.findViewById(R.id.menu_container);
-
-        addMenuItem(container, R.drawable.ic_nav_books_v2, "All Books",  false, () -> navigateTo(BooksActivity.class));
-        addMenuItem(container, R.drawable.ic_nav_cart,    "Our Store",  false, () -> navigateTo(StoresActivity.class));
+    @Override
+    protected void populateAvatarMenu(LinearLayout container) {
+        addMenuItem(container, R.drawable.ic_nav_books_v2, "All Books", false, () -> navigateTo(BooksActivity.class));
+        addMenuItem(container, R.drawable.ic_nav_cart,    "Our Store", false, () -> navigateTo(StoresActivity.class));
         addSeparator(container);
-        addMenuItem(container, R.drawable.ic_nav_logout,   "Log Out",    true,  this::logout);
-
-        content.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-        int popW = content.getMeasuredWidth();
-
-        PopupWindow popup = new PopupWindow(content,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT, true);
-        popup.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        popup.setElevation(dp(18));
-        popup.setOutsideTouchable(true);
-        popup.showAsDropDown(anchor, anchor.getWidth() - popW, dp(8));
-
-        content.setPivotX(popW);
-        content.setPivotY(0f);
-        content.setScaleX(0.85f);
-        content.setScaleY(0.85f);
-        content.setAlpha(0f);
-        content.animate().scaleX(1f).scaleY(1f).alpha(1f)
-                .setDuration(160).setInterpolator(new OvershootInterpolator(1.4f)).start();
-    }
-
-    private void addMenuItem(LinearLayout parent, int iconRes, String label,
-                             boolean isLogout, Runnable action) {
-        View item = getLayoutInflater().inflate(R.layout.item_avatar_menu, parent, false);
-        ImageView icon = item.findViewById(R.id.iv_menu_icon);
-        TextView  text = item.findViewById(R.id.tv_menu_label);
-        icon.setImageResource(iconRes);
-        text.setText(label);
-        if (isLogout) {
-            int red = getColor(R.color.color_error);
-            text.setTextColor(red);
-            icon.setColorFilter(new PorterDuffColorFilter(red, PorterDuff.Mode.SRC_IN));
-        }
-        item.setOnClickListener(v -> action.run());
-        parent.addView(item);
-    }
-
-    private void addSeparator(LinearLayout parent) {
-        View sep = new View(this);
-        LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, dp(1));
-        p.setMargins(dp(13), dp(4), dp(13), dp(4));
-        sep.setLayoutParams(p);
-        sep.setBackgroundColor(getColor(R.color.color_separator));
-        parent.addView(sep);
-    }
-
-    private void navigateTo(Class<?> cls) {
-        Intent intent = new Intent(this, cls);
-        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        startActivity(intent);
+        addMenuItem(container, R.drawable.ic_nav_logout,  "Log Out",   true,  this::logout);
     }
 
     private void openBookDetail(String bookId) {
-        Intent intent = new Intent(this, BookDetailActivity.class);
+        android.content.Intent intent = new android.content.Intent(this, BookDetailActivity.class);
         intent.putExtra("book_id", bookId);
         startActivity(intent);
     }
 
-    private void logout() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        finish();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (nsvHome != null) nsvHome.scrollTo(0, 0);
     }
 
     @Override
@@ -223,30 +157,5 @@ public class HomeActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         autoSlideHandler.removeCallbacks(autoSlideRunnable);
-    }
-
-    private int dp(int val) {
-        return Math.round(val * getResources().getDisplayMetrics().density);
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        setIntent(intent);
-    }
-
-    private static class BookGridDecoration extends RecyclerView.ItemDecoration {
-        private final int colGap, rowGap;
-        BookGridDecoration(int colGap, int rowGap) { this.colGap = colGap; this.rowGap = rowGap; }
-
-        @Override
-        public void getItemOffsets(@NonNull Rect out, @NonNull View v,
-                                   @NonNull RecyclerView parent, @NonNull RecyclerView.State s) {
-            int pos = parent.getChildAdapterPosition(v);
-            int col = pos % 2;
-            out.left  = col == 0 ? 0 : colGap / 2;
-            out.right = col == 0 ? colGap / 2 : 0;
-            if (pos >= 2) out.top = rowGap;
-        }
     }
 }

@@ -5,11 +5,13 @@
     android:background="@color/color_secondary_1">
 
     <!-- ── Scrollable body ── -->
-    <androidx.core.widget.NestedScrollView
+    <com.example.bookworm.view.ScrollableNestedScrollView
+        android:id="@+id/nsv_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="100dp"
-        android:clipToPadding="false">
+        android:clipToPadding="false"
+        android:overScrollMode="never">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -185,7 +187,7 @@
                 android:layout_marginBottom="16dp"
                 android:nestedScrollingEnabled="false" />
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </com.example.bookworm.view.ScrollableNestedScrollView>
 
     <!-- ── Full-width navbar (Home active) — Figma: 393dp × 92dp, bar at y=10 ── -->
     <FrameLayout
