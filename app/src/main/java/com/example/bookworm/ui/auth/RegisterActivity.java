@@ -2,28 +2,40 @@ package com.example.bookworm.ui.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.bookworm.R;
 import com.example.bookworm.data.UserSession;
 import com.example.bookworm.ui.MainActivity;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText etUsername, etEmail, etPassword, etConfirmPassword;
+    private TextInputLayout tilUsername, tilEmail, tilPassword, tilConfirmPassword;
+    private TextInputEditText etUsername, etEmail, etPassword, etConfirmPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        etUsername        = findViewById(R.id.et_username);
-        etEmail           = findViewById(R.id.et_email);
-        etPassword        = findViewById(R.id.et_password);
-        etConfirmPassword = findViewById(R.id.et_confirm_password);
+        tilUsername        = findViewById(R.id.til_username);
+        tilEmail           = findViewById(R.id.til_email);
+        tilPassword        = findViewById(R.id.til_password);
+        tilConfirmPassword = findViewById(R.id.til_confirm_password);
+        etUsername         = findViewById(R.id.et_username);
+        etEmail            = findViewById(R.id.et_email);
+        etPassword         = findViewById(R.id.et_password);
+        etConfirmPassword  = findViewById(R.id.et_confirm_password);
+
+        etUsername.addTextChangedListener(clearErrorOn(tilUsername));
+        etEmail.addTextChangedListener(clearErrorOn(tilEmail));
+        etPassword.addTextChangedListener(clearErrorOn(tilPassword));
+        etConfirmPassword.addTextChangedListener(clearErrorOn(tilConfirmPassword));
 
         TextView tabLogin = findViewById(R.id.tab_login);
         Button btnRegister = findViewById(R.id.btn_register);
@@ -38,31 +50,34 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void validateAndRegister() {
-        String username        = etUsername.getText().toString().trim();
-        String email           = etEmail.getText().toString().trim();
-        String password        = etPassword.getText().toString().trim();
-        String confirmPassword = etConfirmPassword.getText().toString().trim();
+        String username        = text(etUsername);
+        String email           = text(etEmail);
+        String password        = text(etPassword);
+        String confirmPassword = text(etConfirmPassword);
+
+        boolean hasError = false;
 
         if (username.isEmpty()) {
-            showError("Username must be filled.");
-            return;
+            tilUsername.setError("Username must be filled.");
+            hasError = true;
         }
         if (email.isEmpty()) {
-            showError("Email must be filled.");
-            return;
+            tilEmail.setError("Email must be filled.");
+            hasError = true;
         }
         if (password.isEmpty()) {
-            showError("Password must be filled.");
-            return;
+            tilPassword.setError("Password must be filled.");
+            hasError = true;
+        } else if (!password.matches("[a-zA-Z0-9]+")) {
+            tilPassword.setError("Password must be alphanumeric.");
+            hasError = true;
         }
-        if (!password.matches("[a-zA-Z0-9]+")) {
-            showError("Password must be alphanumeric.");
-            return;
+        if (!hasError && !password.equals(confirmPassword)) {
+            tilConfirmPassword.setError("Passwords do not match.");
+            hasError = true;
         }
-        if (!password.equals(confirmPassword)) {
-            showError("Passwords do not match.");
-            return;
-        }
+
+        if (hasError) return;
 
         UserSession.username = username;
         startActivity(new Intent(this, MainActivity.class));
@@ -70,12 +85,17 @@ public class RegisterActivity extends AppCompatActivity {
         finish();
     }
 
-    private void showError(String message) {
-        new MaterialAlertDialogBuilder(this)
-                .setTitle("Invalid Input")
-                .setMessage(message)
-                .setPositiveButton("OK", null)
-                .show();
+    private static String text(TextInputEditText et) {
+        Editable e = et.getText();
+        return e != null ? e.toString().trim() : "";
+    }
+
+    private static TextWatcher clearErrorOn(TextInputLayout til) {
+        return new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int st, int c, int a) {}
+            @Override public void onTextChanged(CharSequence s, int st, int b, int c) {}
+            @Override public void afterTextChanged(Editable s) { til.setError(null); }
+        };
     }
 
     @Override

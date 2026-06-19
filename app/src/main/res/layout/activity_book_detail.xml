@@ -415,53 +415,66 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <!-- Delivery address input -->
-                <EditText
-                    android:id="@+id/et_address"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_address"
+                    style="@style/Widget.BookWorm.TextInputLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/input_height"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="14dp"
-                    android:background="@drawable/bg_input_field"
-                    android:fontFamily="@font/montserrat"
-                    android:hint="@string/hint_delivery_address"
-                    android:imeOptions="actionNext"
-                    android:inputType="textPostalAddress"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp"
-                    android:textColor="@color/color_primary_3"
-                    android:textColorHint="@color/color_hint"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:hint="@string/hint_delivery_address"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPostalAddress"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:textColor="@color/color_primary_3"
+                        android:textColorHint="@color/color_hint"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Phone number label -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/label_phone_number"
                     android:textColor="@color/color_primary_3"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <!-- Phone number input -->
-                <EditText
-                    android:id="@+id/et_phone"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_phone"
+                    style="@style/Widget.BookWorm.TextInputLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/input_height"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp"
-                    android:background="@drawable/bg_input_field"
-                    android:fontFamily="@font/montserrat"
-                    android:hint="@string/hint_phone_number"
-                    android:imeOptions="actionDone"
-                    android:inputType="phone"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp"
-                    android:textColor="@color/color_primary_3"
-                    android:textColorHint="@color/color_hint"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:hint="@string/hint_phone_number"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:textColor="@color/color_primary_3"
+                        android:textColorHint="@color/color_hint"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Total row -->
                 <LinearLayout

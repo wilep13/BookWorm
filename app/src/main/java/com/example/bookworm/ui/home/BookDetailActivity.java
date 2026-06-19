@@ -5,14 +5,14 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.text.style.LeadingMarginSpan;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
@@ -21,13 +21,16 @@ import com.example.bookworm.R;
 import com.example.bookworm.data.Catalogue;
 import com.example.bookworm.model.Book;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class BookDetailActivity extends AppCompatActivity {
 
     private Book book;
     private int qty = 1;
     private TextView tvQty, tvTotal, tvPriceEach;
-    private EditText etAddress, etPhone;
+    private TextInputLayout tilAddress, tilPhone;
+    private TextInputEditText etAddress, etPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +41,13 @@ public class BookDetailActivity extends AppCompatActivity {
         book = Catalogue.findById(bookId != null ? bookId : "");
         if (book == null) { finish(); return; }
 
-        etAddress = findViewById(R.id.et_address);
-        etPhone   = findViewById(R.id.et_phone);
+        tilAddress = findViewById(R.id.til_address);
+        tilPhone   = findViewById(R.id.til_phone);
+        etAddress  = findViewById(R.id.et_address);
+        etPhone    = findViewById(R.id.et_phone);
+
+        etAddress.addTextChangedListener(clearErrorOn(tilAddress));
+        etPhone.addTextChangedListener(clearErrorOn(tilPhone));
 
         bindBook();
         setupQtyControls();
@@ -105,22 +113,31 @@ public class BookDetailActivity extends AppCompatActivity {
     }
 
     private void validateAndOrder() {
-        String address = etAddress.getText().toString().trim();
-        String phone   = etPhone.getText().toString().trim();
+        String address = text(etAddress);
+        String phone   = text(etPhone);
 
-        if (address.isEmpty() || phone.isEmpty()) {
-            new MaterialAlertDialogBuilder(this)
-                    .setTitle("Incomplete Form")
-                    .setMessage("Address and phone number must be filled.")
-                    .setPositiveButton("OK", null)
-                    .show();
-            return;
+        boolean hasError = false;
+        StringBuilder errors = new StringBuilder();
+
+        if (address.isEmpty()) {
+            tilAddress.setError("Address must be filled.");
+            errors.append("• Address must be filled.\n");
+            hasError = true;
+        }
+        if (phone.isEmpty()) {
+            tilPhone.setError("Phone number must be filled.");
+            errors.append("• Phone number must be filled.\n");
+            hasError = true;
+        } else if (!phone.matches("[0-9]+")) {
+            tilPhone.setError("Phone number must be numeric.");
+            errors.append("• Phone number must be numeric.\n");
+            hasError = true;
         }
 
-        if (!TextUtils.isDigitsOnly(phone)) {
+        if (hasError) {
             new MaterialAlertDialogBuilder(this)
-                    .setTitle("Invalid Phone Number")
-                    .setMessage("Phone number must be numeric.")
+                    .setTitle("Invalid Input")
+                    .setMessage(errors.toString().trim())
                     .setPositiveButton("OK", null)
                     .show();
             return;
@@ -149,6 +166,19 @@ public class BookDetailActivity extends AppCompatActivity {
         if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         }
+    }
+
+    private static String text(TextInputEditText et) {
+        Editable e = et.getText();
+        return e != null ? e.toString().trim() : "";
+    }
+
+    private static TextWatcher clearErrorOn(TextInputLayout til) {
+        return new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int st, int c, int a) {}
+            @Override public void onTextChanged(CharSequence s, int st, int b, int c) {}
+            @Override public void afterTextChanged(Editable s) { til.setError(null); }
+        };
     }
 
     private void updateTotal() {

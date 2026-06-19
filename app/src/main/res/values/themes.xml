@@ -90,6 +90,26 @@
         <item name="android:textColor">@color/color_primary_3</item>
     </style>
 
+    <!-- ── TextInputLayout component ── -->
+    <style name="Widget.BookWorm.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/input_corner_radius</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="hintEnabled">false</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="errorTextColor">@color/color_error</item>
+        <item name="errorTextAppearance">@style/TextAppearance.BookWorm.InputError</item>
+    </style>
+
+    <style name="TextAppearance.BookWorm.InputError" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textColor">@color/color_error</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
     <!-- ── Button components ── -->
     <style name="Widget.BookWorm.Button" parent="Widget.Material3.Button">
         <item name="android:fontFamily">@font/montserrat</item>

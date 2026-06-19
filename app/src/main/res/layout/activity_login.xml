@@ -180,55 +180,66 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <!-- Username field -->
-            <EditText
-                android:id="@+id/et_username"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_username"
+                style="@style/Widget.BookWorm.TextInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/input_height"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/bg_input_field"
-                android:elevation="4dp"
-                android:fontFamily="@font/montserrat"
-                android:hint="@string/hint_username"
-                android:imeOptions="actionNext"
-                android:inputType="textPersonName"
-                android:paddingStart="18dp"
-                android:paddingEnd="18dp"
-                android:textColor="@color/color_primary_2"
-                android:textColorHint="@color/color_hint"
-                android:textSize="13sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/hint_username"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
+                    android:textColor="@color/color_primary_2"
+                    android:textColorHint="@color/color_hint"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Password label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/label_password"
                 android:textColor="@color/color_primary_2"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <!-- Password field -->
-            <EditText
-                android:id="@+id/et_password"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_password"
+                style="@style/Widget.BookWorm.TextInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/input_height"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/bg_input_field"
-                android:elevation="4dp"
-                android:fontFamily="@font/montserrat"
-                android:hint="@string/hint_password"
-                android:imeOptions="actionDone"
-                android:inputType="textPassword"
-                android:paddingStart="18dp"
-                android:paddingEnd="18dp"
-                android:textColor="@color/color_primary_2"
-                android:textColorHint="@color/color_hint"
-                android:textSize="13sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/hint_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
+                    android:textColor="@color/color_primary_2"
+                    android:textColorHint="@color/color_hint"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- LOGIN button -->
             <Button
