@@ -18,30 +18,88 @@ Aplikasi Android toko buku digital yang menampilkan koleksi buku klasik pilihan 
 
 ## Tangkapan Layar
 
-> *(Tambahkan screenshot aplikasi di sini)*
+| Home | Books | Stores |
+|:---:|:---:|:---:|
+| ![Home](screenshots/home_page.jpeg) | ![Books](screenshots/books_page.jpeg) | ![Stores](screenshots/stores_page.jpeg) |
 
 ---
 
-## Spesifikasi Teknis
+## Teknologi dan Persyaratan
+
+### Persyaratan Sistem
+
+| Kebutuhan | Versi Minimum |
+|---|---|
+| Android Studio | Hedgehog (2023.1.1) atau lebih baru |
+| JDK | 11 |
+| Android SDK | API 35 (Android 15) |
+| Gradle | 8.x |
+
+### Stack Teknologi
 
 | Atribut | Nilai |
 |---|---|
 | Bahasa | Java |
 | Min SDK | 35 (Android 15) |
-| Target SDK | 35 |
+| Target SDK | 36 |
 | Build Tools | Gradle (Kotlin DSL) |
 | View Binding | Aktif |
 
 ### Dependensi Utama
 
-| Library | Kegunaan |
-|---|---|
-| `androidx.appcompat` | Kompatibilitas Activity & tema |
-| `androidx.recyclerview` | Daftar buku dan toko |
-| `androidx.viewpager2` | Carousel banner infinite-scroll |
-| `androidx.core:core-splashscreen` | Splash screen native Android 12+ |
-| `com.google.android.material` | Komponen Material Design |
-| `com.github.bumptech.glide` | Loading & caching gambar |
+| Library | Versi | Kegunaan |
+|---|---|---|
+| `androidx.appcompat` | 1.x | Kompatibilitas Activity & tema |
+| `androidx.recyclerview` | 1.3.2 | Daftar buku dan toko |
+| `androidx.viewpager2` | 1.1.0 | Carousel banner infinite-scroll |
+| `androidx.core:core-splashscreen` | 1.0.1 | Splash screen native Android 12+ |
+| `com.google.android.material` | latest | Komponen Material Design |
+| `com.github.bumptech.glide` | 4.16.0 | Loading & caching gambar |
+
+---
+
+## Cara Clone dan Install
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/username/BookWorm.git
+cd BookWorm
+```
+
+### 2. Buka di Android Studio
+
+1. Buka **Android Studio**
+2. Pilih **File → Open**
+3. Arahkan ke folder `BookWorm` yang sudah di-clone
+4. Tunggu proses **Gradle sync** selesai
+
+### 3. Jalankan Aplikasi
+
+**Via emulator:**
+1. Buka **Device Manager** di Android Studio
+2. Buat atau pilih emulator dengan API 35+
+3. Klik tombol **Run ▶**
+
+**Via perangkat fisik:**
+1. Aktifkan **Developer Options** dan **USB Debugging** di HP
+2. Hubungkan HP ke komputer via USB
+3. Klik tombol **Run ▶**
+
+**Via terminal:**
+
+```bash
+# Build debug APK
+./gradlew assembleDebug
+
+# Install langsung ke perangkat yang terhubung
+./gradlew installDebug
+```
+
+APK hasil build tersimpan di:
+```
+app/build/outputs/apk/debug/app-debug.apk
+```
 
 ---
 
@@ -166,15 +224,23 @@ Semua data bersifat statis dan disimpan di `Catalogue.java`. Tidak ada database 
 
 ---
 
-## Catatan Pengembangan
+## Troubleshooting
 
-- **Tidak ada unit test** — hanya skeleton test runner yang dideklarasikan di `build.gradle.kts`
-- **Tidak ada database** — tambah/edit buku langsung di `Catalogue.java`
-- **BookCoverView** menggambar cover buku 3D menggunakan `Canvas` dengan pixel math yang di-derive dari Figma; konstanta `FACE_B = 0.2409` adalah nilai kritis yang menentukan batas bawah area cover art
-- **Carousel** menggunakan `LOOP_FACTOR = 10.000` pada total item count agar efek infinite scroll tidak pernah mencapai batas nyata
+**Gradle sync gagal**
+- Pastikan koneksi internet aktif saat sync pertama kali
+- Coba **File → Invalidate Caches / Restart**
+- Periksa versi JDK: harus JDK 11 (`File → Project Structure → SDK Location`)
 
----
+**Aplikasi tidak muncul di perangkat**
+- Pastikan **USB Debugging** aktif di Developer Options
+- Coba ganti kabel USB atau port
+- Jalankan `adb devices` di terminal untuk memastikan perangkat terdeteksi
 
-## Lisensi
+**Build error: `AAPT` atau resource tidak ditemukan**
+- Jalankan **Build → Clean Project** lalu **Build → Rebuild Project**
+- Pastikan tidak ada file di `res/` yang namanya mengandung huruf kapital atau spasi
 
-Project ini dibuat untuk keperluan akademik — **User Experience Lab, Cawu 5**.
+**Emulator lambat**
+- Aktifkan **Hardware Acceleration (HAXM/WHPX)** di BIOS dan Android Studio
+- Gunakan **x86_64** system image, bukan ARM
+- Kurangi RAM emulator ke 2GB jika memori komputer terbatas
