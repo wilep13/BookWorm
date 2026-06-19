@@ -13,8 +13,13 @@
 
     <!-- Theme khusus SplashActivity: system splash screen tidak terlihat -->
     <style name="Theme.BookWorm.Splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/color_secondary_1</item>
+        <item name="android:windowBackground">@color/color_secondary_2</item>
+        <item name="android:windowSplashScreenBackground">@color/color_secondary_2</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splash_transparent</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/color_secondary_2</item>
+        <item name="windowSplashScreenBackground">@color/color_secondary_2</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_transparent</item>
+        <item name="windowSplashScreenIconBackgroundColor">@color/color_secondary_2</item>
         <item name="postSplashScreenTheme">@style/Theme.BookWorm</item>
     </style>
 

@@ -1,6 +1,7 @@
 package com.example.bookworm.ui.splash;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -20,6 +21,7 @@ public class SplashActivity extends AppCompatActivity {
         SplashScreen.installSplashScreen(this)
                 .setOnExitAnimationListener(provider -> provider.remove());
         super.onCreate(savedInstanceState);
+        getWindow().setBackgroundDrawable(new ColorDrawable(0xFFFFF8F0));
         setContentView(R.layout.activity_splash);
 
         ImageView ivLogo        = findViewById(R.id.iv_logo);

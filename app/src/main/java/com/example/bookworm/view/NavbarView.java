@@ -22,7 +22,7 @@ public class NavbarView extends View {
     public static final int SLOT_LOGOUT = 3;
 
     // Slot center X positions in dp (from Figma)
-    private static final float[] SLOT_DP = { 69f, 158f, 246f, 342f };
+    private static final float[] SLOT_DP = { 50f, 140f, 230f, 320f };
 
     private final float density;
     private int   activeSlot = SLOT_HOME;
