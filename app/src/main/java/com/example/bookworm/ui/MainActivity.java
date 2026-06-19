@@ -2,9 +2,10 @@ package com.example.bookworm.ui;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
-import androidx.annotation.NonNull;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import androidx.annotation.NonNull;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -145,12 +146,15 @@ public class MainActivity extends AppCompatActivity {
         View item = getLayoutInflater().inflate(R.layout.item_avatar_menu, parent, false);
         ImageView icon = item.findViewById(R.id.iv_menu_icon);
         TextView  text = item.findViewById(R.id.tv_menu_label);
-        icon.setImageResource(iconRes);
+        int color = isLogout ? getColor(R.color.color_error) : getColor(R.color.color_primary_3);
         text.setText(label);
-        if (isLogout) {
-            int red = getColor(R.color.color_error);
-            text.setTextColor(red);
-            icon.setColorFilter(new PorterDuffColorFilter(red, PorterDuff.Mode.SRC_IN));
+        text.setTextColor(color);
+        icon.setImageResource(iconRes);
+        Drawable d = icon.getDrawable();
+        if (d != null) {
+            d = d.mutate();
+            d.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+            icon.setImageDrawable(d);
         }
         item.setOnClickListener(v -> action.run());
         parent.addView(item);

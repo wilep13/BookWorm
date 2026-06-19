@@ -23,7 +23,6 @@ import com.example.bookworm.adapter.CarouselAdapter;
 import com.example.bookworm.data.Catalogue;
 import com.example.bookworm.data.UserSession;
 import com.example.bookworm.model.Book;
-import com.example.bookworm.ui.BaseActivity;
 import com.example.bookworm.ui.MainActivity;
 import com.example.bookworm.view.NavbarView;
 import java.util.List;
@@ -122,7 +121,7 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
         rv.setAdapter(adapter);
-        rv.addItemDecoration(new BaseActivity.BookGridDecoration(dp(16), dp(30)));
+        rv.addItemDecoration(new BookGridDecoration(dp(16), dp(30)));
     }
 
     private void setupAvatar(View root) {

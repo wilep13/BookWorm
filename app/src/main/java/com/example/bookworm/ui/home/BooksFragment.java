@@ -18,7 +18,6 @@ import com.example.bookworm.R;
 import com.example.bookworm.adapter.BookAdapter;
 import com.example.bookworm.data.Catalogue;
 import com.example.bookworm.model.Book;
-import com.example.bookworm.ui.BaseActivity;
 import com.example.bookworm.ui.MainActivity;
 import java.util.ArrayList;
 import java.util.List;
@@ -118,7 +117,7 @@ public class BooksFragment extends Fragment {
             startActivity(intent);
         });
         rv.setAdapter(bookAdapter);
-        rv.addItemDecoration(new BaseActivity.BookGridDecoration(dp(16), dp(30)));
+        rv.addItemDecoration(new BookGridDecoration(dp(16), dp(30)));
     }
 
     @Override
