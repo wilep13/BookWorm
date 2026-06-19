@@ -1,6 +1,6 @@
 # BookWorm
 
-Aplikasi Android toko buku digital yang menampilkan koleksi buku klasik pilihan beserta informasi toko fisik. Dibangun dengan pure Java tanpa framework MVVM atau Jetpack Compose.
+**BookWorm** adalah aplikasi Android untuk pecinta buku yang menghadirkan pengalaman belanja buku klasik terpilih secara digital — lengkap dengan detail buku, harga, dan informasi toko fisik terdekat. Dirancang dengan antarmuka yang hangat dan elegan, dibangun sepenuhnya menggunakan pure Java dengan pendekatan arsitektur yang bersih dan ringan.
 
 ---
 
