@@ -21,6 +21,7 @@ import com.example.bookworm.R;
 import com.example.bookworm.adapter.BookAdapter;
 import com.example.bookworm.adapter.CarouselAdapter;
 import com.example.bookworm.data.Catalogue;
+import com.example.bookworm.data.UserSession;
 import com.example.bookworm.model.Book;
 import com.example.bookworm.ui.BaseActivity;
 import com.example.bookworm.ui.MainActivity;
@@ -57,9 +58,17 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         nsvHome = view.findViewById(R.id.nsv_home);
+        setupGreeting(view);
         setupCarousel(view);
         setupBookGrid(view);
         setupAvatar(view);
+    }
+
+    private void setupGreeting(View root) {
+        TextView tvGreeting = root.findViewById(R.id.tv_greeting);
+        if (tvGreeting != null && !UserSession.username.isEmpty()) {
+            tvGreeting.setText("Hello, " + UserSession.username + "!");
+        }
     }
 
     private void setupCarousel(View root) {

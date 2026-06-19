@@ -15,6 +15,7 @@ import com.example.bookworm.R;
 import com.example.bookworm.adapter.BookAdapter;
 import com.example.bookworm.adapter.CarouselAdapter;
 import com.example.bookworm.data.Catalogue;
+import com.example.bookworm.data.UserSession;
 import com.example.bookworm.model.Book;
 import com.example.bookworm.ui.BaseActivity;
 import java.util.List;
@@ -44,9 +45,17 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         nsvHome = findViewById(R.id.nsv_home);
+        setupGreeting();
         setupCarousel();
         setupBookGrid();
         setupNavbar();
+    }
+
+    private void setupGreeting() {
+        TextView tvGreeting = findViewById(R.id.tv_greeting);
+        if (tvGreeting != null && !UserSession.username.isEmpty()) {
+            tvGreeting.setText("Hello, " + UserSession.username + "!");
+        }
     }
 
     private void setupCarousel() {

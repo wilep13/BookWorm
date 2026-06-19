@@ -78,13 +78,16 @@ public abstract class BaseActivity extends AppCompatActivity {
         View item = getLayoutInflater().inflate(R.layout.item_avatar_menu, parent, false);
         ImageView icon = item.findViewById(R.id.iv_menu_icon);
         TextView  text = item.findViewById(R.id.tv_menu_label);
+        int color = isLogout ? getColor(R.color.color_error) : getColor(R.color.color_primary_3);
+        text.setText(label);
+        text.setTextColor(color);
         icon.setImageResource(iconRes);
         Drawable d = icon.getDrawable();
-        if (d != null) icon.setImageDrawable(d.mutate());
-        text.setText(label);
-        int color = isLogout ? getColor(R.color.color_error) : getColor(R.color.color_primary_3);
-        text.setTextColor(color);
-        icon.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+        if (d != null) {
+            d = d.mutate();
+            d.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+            icon.setImageDrawable(d);
+        }
         item.setOnClickListener(v -> action.run());
         parent.addView(item);
     }

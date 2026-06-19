@@ -48,7 +48,10 @@ public class NavbarView extends View {
             R.drawable.ic_nav_home_v2, R.drawable.ic_nav_books_v2,
             R.drawable.ic_nav_cart,    R.drawable.ic_nav_logout
         };
-        for (int i = 0; i < 4; i++) icons[i] = ContextCompat.getDrawable(c, res[i]);
+        for (int i = 0; i < 4; i++) {
+            Drawable d = ContextCompat.getDrawable(c, res[i]);
+            icons[i] = d != null ? d.mutate() : null;
+        }
     }
 
     public void setOnTabClickListener(OnTabClickListener l) { listener = l; }
