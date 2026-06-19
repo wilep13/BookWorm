@@ -1,7 +1,6 @@
 # BookWorm
 
 **BookWorm** adalah aplikasi Android untuk pecinta buku yang menghadirkan pengalaman belanja buku klasik terpilih secara digital — lengkap dengan detail buku, harga, dan informasi toko fisik terdekat. Dirancang dengan antarmuka yang hangat dan elegan, dibangun sepenuhnya menggunakan pure Java dengan pendekatan arsitektur yang bersih dan ringan.
-
 ---
 
 ## Fitur
@@ -40,8 +39,9 @@
 | Atribut | Nilai |
 |---|---|
 | Bahasa | Java |
-| Min SDK | 35 (Android 15) |
-| Target SDK | 36 |
+| Compile SDK | 36 |
+| Min SDK | 35 |
+| Target SDK | 35 |
 | Build Tools | Gradle (Kotlin DSL) |
 | View Binding | Aktif |
 
