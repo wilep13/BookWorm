@@ -82,25 +82,25 @@
                     android:contentDescription="@null" />
             </FrameLayout>
 
-            <!-- "Hello !" heading -->
+            <!-- "Hello !" heading (Figma: Playfair Display Bold 40sp) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/montserrat"
+                android:fontFamily="@font/playfair_display"
                 android:text="@string/label_hello"
                 android:textColor="@color/color_primary_3"
-                android:textSize="45sp"
+                android:textSize="40sp"
                 android:textStyle="bold" />
 
-            <!-- Subtitle -->
+            <!-- Subtitle (Figma: Montserrat Bold 14sp) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/subtitle_welcome_back"
                 android:textColor="@color/color_primary_3"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -177,7 +177,7 @@
                 android:fontFamily="@font/montserrat"
                 android:text="@string/label_username"
                 android:textColor="@color/color_primary_2"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -201,8 +201,7 @@
                     android:paddingBottom="13dp"
                     android:textColor="@color/color_primary_2"
                     android:textColorHint="@color/color_hint"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Password label -->
@@ -213,7 +212,7 @@
                 android:fontFamily="@font/montserrat"
                 android:text="@string/label_password"
                 android:textColor="@color/color_primary_2"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -237,8 +236,7 @@
                     android:paddingBottom="13dp"
                     android:textColor="@color/color_primary_2"
                     android:textColorHint="@color/color_hint"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- LOGIN button -->
@@ -258,7 +256,7 @@
                 android:text="@string/footer_tap_login"
                 android:textColor="@color/color_grey"
                 android:textSize="11sp"
-                android:fontWeight="600" />
+                android:fontWeight="500" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

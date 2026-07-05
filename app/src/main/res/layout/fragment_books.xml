@@ -33,27 +33,30 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <!-- Figma: Montserrat Bold 12sp, letterSpacing, Primary 1 -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat"
                         android:text="@string/kicker_books"
                         android:textColor="@color/color_primary_1"
-                        android:textSize="11sp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
                         android:textAllCaps="true"
                         android:letterSpacing="0.12" />
 
+                    <!-- Figma: Playfair Display Bold 24sp (H2), Primary 3 -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/playfair_display"
                         android:text="@string/title_our_library"
                         android:textColor="@color/color_primary_3"
-                        android:textSize="27sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
+                    <!-- Figma: Montserrat Regular 16sp, Primary 3 -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -61,9 +64,7 @@
                         android:fontFamily="@font/montserrat"
                         android:text="@string/subtitle_timeless"
                         android:textColor="@color/color_primary_3"
-                        android:textSize="14sp"
-                        android:alpha="0.80"
-                        android:fontWeight="600" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <ImageView
@@ -110,9 +111,8 @@
                         android:fontFamily="@font/montserrat"
                         android:text="@string/tab_non_fiction"
                         android:textColor="@color/white"
-                        android:textSize="13.5sp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
-                        android:letterSpacing="0.03"
                         android:clickable="true"
                         android:focusable="true" />
 
@@ -125,9 +125,8 @@
                         android:fontFamily="@font/montserrat"
                         android:text="@string/tab_fiction"
                         android:textColor="@color/color_primary_3"
-                        android:textSize="13.5sp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
-                        android:letterSpacing="0.03"
                         android:clickable="true"
                         android:focusable="true" />
                 </LinearLayout>

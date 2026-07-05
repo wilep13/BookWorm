@@ -33,29 +33,32 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <!-- Figma: Montserrat Bold 16sp, letterSpacing 0.12, Primary 1 -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat"
                         android:text="@string/caption_welcome_back"
                         android:textColor="@color/color_primary_1"
-                        android:textSize="11sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         android:textAllCaps="true"
                         android:letterSpacing="0.12" />
 
+                    <!-- Figma: Playfair Display 28sp, Primary 3 -->
                     <TextView
                         android:id="@+id/tv_greeting"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/playfair_display"
                         android:text="@string/greeting_hello"
                         android:textColor="@color/color_primary_3"
-                        android:textSize="27sp"
+                        android:textSize="28sp"
                         android:textStyle="bold"
                         tools:text="Hello, Stieven!" />
 
+                    <!-- Figma: Montserrat Bold 16sp, Primary 3 -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -63,9 +66,8 @@
                         android:fontFamily="@font/montserrat"
                         android:text="@string/subtitle_nice_day"
                         android:textColor="@color/color_primary_3"
-                        android:textSize="14sp"
-                        android:alpha="0.80"
-                        android:fontWeight="600" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <ImageView
@@ -168,6 +170,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
+                <!-- Figma: Montserrat Bold 16sp, Primary 3 -->
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -175,16 +178,17 @@
                     android:fontFamily="@font/montserrat"
                     android:text="@string/section_featured_books"
                     android:textColor="@color/color_primary_3"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
+                <!-- Figma: Montserrat Bold 12sp, Primary 2 - 80 (#9F6F53) -->
                 <TextView
                     android:id="@+id/tv_see_all"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/btn_see_all"
-                    android:textColor="@color/color_primary_2"
+                    android:textColor="@color/color_primary_2_80"
                     android:textSize="12sp"
                     android:clickable="true"
                     android:focusable="true"

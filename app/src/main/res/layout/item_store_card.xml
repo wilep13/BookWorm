@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/playfair_display"
             android:textColor="@color/color_primary_3"
-            android:textSize="17sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:lineSpacingMultiplier="1.2"
             android:maxLines="2"
@@ -72,8 +72,8 @@
                 android:layout_marginStart="6dp"
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/color_primary_3"
-                android:textSize="11sp"
-                android:fontWeight="600"
+                android:textSize="12sp"
+                android:fontWeight="500"
                 android:maxLines="2"
                 tools:text="Jl. Braga No. 18, Bandung" />
         </LinearLayout>
@@ -101,8 +101,8 @@
                 android:layout_marginStart="6dp"
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/color_primary_3"
-                android:textSize="11sp"
-                android:fontWeight="600"
+                android:textSize="12sp"
+                android:fontWeight="500"
                 tools:text="+62 812 3344 5566" />
         </LinearLayout>
 
@@ -129,8 +129,8 @@
                 android:layout_marginStart="6dp"
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/color_primary_3"
-                android:textSize="11sp"
-                android:fontWeight="600"
+                android:textSize="12sp"
+                android:fontWeight="500"
                 tools:text="09:00 – 21:00" />
         </LinearLayout>
     </LinearLayout>

@@ -64,7 +64,7 @@
     <string name="btn_buy_now">BUY NOW</string>
     <string name="label_published">Published</string>
     <string name="label_pages">Pages</string>
-    <string name="label_genre">Genre</string>
+    <string name="label_genre">Genres</string>
     <string name="content_description_back">Back</string>
 
     <!-- Navbar -->

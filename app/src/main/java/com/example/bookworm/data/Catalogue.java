@@ -12,7 +12,7 @@ public class Catalogue {
         // Non-Fiction
         new Book("meditations", "Meditations", "Marcus Aurelius",
             "Non-Fiction", "Stoic Philosophy",
-            "#2E5248", "#E7C48B", "c. 180", 254, 95000,
+            "#2E5248", "#E7C48B", "c. 180", 254, 91000,
             "The private notes of a Roman emperor to himself — a timeless manual on discipline, perspective and living with virtue amid chaos.",
             R.drawable.cover_art_meditations),
         new Book("republic", "The Republic", "Plato",

@@ -30,7 +30,7 @@ Aplikasi Android untuk pecinta buku yang menghadirkan pengalaman belanja buku kl
 
 | Kebutuhan | Versi Minimum |
 |---|---|
-| Android Studio | Hedgehog (2023.1.1) atau lebih baru |
+| Android Studio | Meerkat Feature Drop 2024.3.2 Patch 1 |
 | JDK | 11 |
 | Android SDK | API 35 (Android 15) |
 | Gradle | 8.x |

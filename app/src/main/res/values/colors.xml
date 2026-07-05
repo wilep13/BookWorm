@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="black">#FF0E0D0D</color>     <!-- Figma Black - 100 (#0E0D0D) -->
     <color name="white">#FFFFFFFF</color>
     <!-- Core palette (matches reference CSS variables) -->
     <color name="color_primary_1">#C08552</color>    <!-- caramel -->
@@ -11,7 +11,7 @@
     <color name="color_secondary_1">#FFE9CF</color>  <!-- bg-peach -->
     <color name="color_secondary_2">#FFF8F0</color>  <!-- bg-cream -->
     <color name="color_surface">#FFFFFF</color>       <!-- surface / card -->
-    <color name="color_grey">#999999</color>          <!-- ink-secondary -->
+    <color name="color_grey">#7A7979</color>          <!-- Figma Black - 60 (text secondary) -->
     <color name="color_error">#B76464</color>         <!-- error -->
     <color name="color_hint">#3B000000</color>
     <!-- Divider / border alphas -->
@@ -19,11 +19,12 @@
     <color name="color_border">#29553522</color>     <!-- rgba(85,53,34,.16) -->
     <color name="color_dot_inactive">#47553522</color> <!-- rgba(124,57,0,.28) approx -->
     <color name="color_success">#6F8E5A</color>        <!-- success green -->
+    <!-- Figma palette steps -->
+    <color name="color_primary_2_80">#9F6F53</color>   <!-- Primary 2 - 80 (Figma) -->
     <!-- Derived alpha tokens (Primary 2 with opacity) -->
     <color name="color_primary_2_65">#A68D5B3D</color> <!-- Primary 2 at 65% — stat chip -->
     <color name="color_primary_2_40">#668D5B3D</color> <!-- Primary 2 at 40% — qty btn stroke -->
     <!-- Semi-transparent design tokens -->
-    <color name="color_overlay_dark">#80281810</color> <!-- success overlay dim -->
     <color name="color_separator">#14553522</color>    <!-- popup menu separator -->
     <color name="color_meta_strip_bg">#80FFFFFF</color> <!-- book detail meta strip -->
 </resources>

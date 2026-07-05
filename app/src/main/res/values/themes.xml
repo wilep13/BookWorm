@@ -5,8 +5,9 @@
         <item name="colorSecondary">@color/color_primary_2</item>
         <item name="android:colorBackground">@color/color_secondary_1</item>
         <item name="android:windowBackground">@color/color_secondary_1</item>
-        <item name="android:fontFamily">@font/montserrat</item>
-        <item name="fontFamily">@font/montserrat</item>
+        <!-- NB: jangan set android:fontFamily di level tema — pada Material3 itu menimpa
+             android:fontFamily inline pada TextView (mis. heading Playfair jadi ikut Montserrat).
+             Setiap TextView di app sudah menetapkan fontFamily-nya sendiri secara eksplisit. -->
     </style>
 
     <style name="Theme.BookWorm" parent="Base.Theme.BookWorm" />
@@ -129,17 +130,20 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/button_primary_height</item>
         <item name="android:background">@drawable/bg_button_primary</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">16sp</item>   <!-- Figma: Button Montserrat Bold 16sp -->
         <item name="android:textStyle">bold</item>
         <item name="android:elevation">4dp</item>
     </style>
 
+    <!-- Landing "GET STARTED" — Figma: Montserrat Bold 12sp, radius 10, padding 12×5, wrap content -->
     <style name="Widget.BookWorm.Button.Splash">
-        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/bg_button_splash</item>
-        <item name="android:textSize">9sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
         <item name="android:paddingTop">5dp</item>
         <item name="android:paddingBottom">5dp</item>
     </style>

@@ -6,12 +6,10 @@
     <dimen name="input_corner_radius">7dp</dimen>
     <dimen name="button_primary_height">48dp</dimen>
     <dimen name="button_primary_corner">7dp</dimen>
-    <dimen name="button_splash_corner">12dp</dimen>
-    <dimen name="carousel_height">150dp</dimen>
+    <dimen name="button_splash_corner">10dp</dimen>
+    <dimen name="carousel_height">180dp</dimen>
     <dimen name="avatar_size">51dp</dimen>
     <dimen name="logo_width">110dp</dimen>
     <dimen name="logo_height">120dp</dimen>
-    <dimen name="store_card_image_width">96dp</dimen>
-    <dimen name="store_card_image_height">112dp</dimen>
-    <dimen name="cover_detail_width">136dp</dimen>
+    <dimen name="cover_detail_width">124dp</dimen>
 </resources>
