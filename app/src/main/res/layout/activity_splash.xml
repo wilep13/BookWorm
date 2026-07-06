@@ -8,7 +8,7 @@
 
     <!-- Peach oval shadow: fades in first, absorbed as logo lands -->
     <View
-        android:id="@+id/view_shadow"
+        android:id="@+id/view_shadow" 
         android:layout_width="130dp"
         android:layout_height="22dp"
         android:layout_marginTop="360dp"
